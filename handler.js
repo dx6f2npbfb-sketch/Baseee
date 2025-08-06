@@ -518,7 +518,7 @@ private: `*${emoji} Esta función solo puede ser ejecutada en chat privado.*`,
 admin: `*${emoji} Este comando solo puede ser usado por Admins.*`, 
 botAdmin: `*${emoji} Para usar esta función debo ser Admin.*`,
 unreg: `*${emoji} \`${botname}\` te avisa que no te encuentras registrado para usar esta función en el bot.*\n\nPara verificar utiliza .reg nombre.edad
-> Ejemplo: .reg Jota.21`,
+> Ejemplo: .reg ${namebot}.21`,
 restrict: `*${emoji} Esta característica esta desactivada.*`
 }[type];
 if (msg) return conn.reply(m.chat, msg, m, rcanal).then(_ => m.react('✖️'))}

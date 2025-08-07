@@ -12,6 +12,8 @@ global.owner = [
    ['51927238856', 'Dev Criss 🇦🇱', true],
    ['51990841568', 'Soporte', true],
    ['5216641784469', '《BrayanOFC》', true],
+   ['90812788543600', '@Dev.Criss', true],
+   ['229356135813175', '@Jxta', true],
 ]
 
 global.creator = [

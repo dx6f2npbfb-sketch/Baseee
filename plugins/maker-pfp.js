@@ -21,7 +21,7 @@ let handler = async (m, { conn, args }) => {
     } else if (m.mentionedJid?.[0]) {
         who = m.mentionedJid[0];
     } else {
-        return m.reply(`*${emojis} Debes responder a un mensaje, etiquetar a un usuario o ingresar un número válido.*`);
+        return conn.reply(m.chat, `*${emojis} Debes responder a un mensaje, etiquetar a un usuario o ingresar un número válido.*`, m, rcanal);
     }
 
     let name;

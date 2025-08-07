@@ -44,3 +44,52 @@ handler.tags = ['maker'];
 handler.command = ['pfp'];
 
 export default handler;*/
+
+let handler = async (m, { conn, args }) => {
+  let who;
+  
+  // Si se pasa número por args
+  if (args.length > 0) {
+    let input = args.join('').replace(/\D/g, '');
+    if (input.length < 8) return m.reply('*✖️ Número inválido. Asegúrate de ingresar un número completo.*');
+
+    let exists = await conn.onWhatsApp(input + '@s.whatsapp.net');
+    if (!exists || !exists[0]?.exists) {
+      return m.reply(`✖️ *El número +${input} no está registrado en WhatsApp.*`);
+    }
+
+    who = exists[0].jid;
+  } else {
+    // Validación simplificada de mención o respuesta
+    who = m.mentionedJid?.[0] || m.quoted?.sender;
+
+    if (!who) {
+      return conn.reply(m.chat, '*⚠️ Debes mencionar a un usuario, responder un mensaje o ingresar un número válido.*', m);
+    }
+  }
+
+  // Obtener nombre de usuario
+  let name;
+  try {
+    name = await conn.getName(who);
+  } catch {
+    name = who.split('@')[0];
+  }
+
+  // Obtener el tag del usuario (por si quieres usarlo en el texto)
+  const taguser = '@' + who.split('@')[0];
+
+  // Intentar enviar la foto de perfil
+  try {
+    let pp = await conn.profilePictureUrl(who, 'image');
+    await conn.sendFile(m.chat, pp, 'profile.jpg', `🖼️ *Foto de perfil de ${taguser}*`, m);
+  } catch (e) {
+    await m.reply(`⚠️ *El usuario ${taguser} no tiene foto de perfil o no se pudo obtener.*`);
+  }
+};
+
+handler.help = ['pfp'];
+handler.tags = ['maker'];
+handler.command = ['pfp'];
+
+export default handler;

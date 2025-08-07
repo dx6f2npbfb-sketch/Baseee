@@ -14,7 +14,7 @@ const handler = async (m, { conn }) => {
     const mime = (q.msg || q).mimetype || q.mediaType || ""
 
     if (!/^image\/(jpe?g|png)$/.test(mime)) {
-      return m.reply(`*${emojis} Responde a una imagen para eliminar el fondo.*`)
+      return conn.reply(m.chat, `*${emojis} Responde a una imagen para eliminar el fondo.*`, m, rcanal)
     }
 
     await m.react('🕐')

@@ -47,8 +47,8 @@ export default handler;*/
 
 let handler = async (m, { conn, args }) => {
   let who;
-  
-  // Si se pasa número por args
+
+  // 1. Si se pasa un número por texto (ej: .pfp 51987654321)
   if (args.length > 0) {
     let input = args.join('').replace(/\D/g, '');
     if (input.length < 8) return m.reply('*✖️ Número inválido. Asegúrate de ingresar un número completo.*');
@@ -60,15 +60,25 @@ let handler = async (m, { conn, args }) => {
 
     who = exists[0].jid;
   } else {
-    // Validación simplificada de mención o respuesta
-    who = m.mentionedJid?.[0] || m.quoted?.sender;
+    // 2. Detectar correctamente el JID evitando LIDs
 
-    if (!who) {
-      return conn.reply(m.chat, '*⚠️ Debes mencionar a un usuario, responder un mensaje o ingresar un número válido.*', m);
+    // Si fue un mensaje citado
+    if (m.quoted?.participant) {
+      who = m.quoted.participant; // usa el JID real del citado
+    }
+
+    // Si fue mención válida
+    else if (m.message?.extendedTextMessage?.contextInfo?.mentionedJid?.[0]) {
+      who = m.message.extendedTextMessage.contextInfo.mentionedJid[0]; // JID real de la mención
+    }
+
+    // Fallback si no se encuentra
+    else {
+      return conn.reply(m.chat, '*⚠️ Debes mencionar a un usuario, responder a un mensaje o ingresar un número válido.*', m);
     }
   }
 
-  // Obtener nombre de usuario
+  // Obtener nombre
   let name;
   try {
     name = await conn.getName(who);
@@ -76,10 +86,10 @@ let handler = async (m, { conn, args }) => {
     name = who.split('@')[0];
   }
 
-  // Obtener el tag del usuario (por si quieres usarlo en el texto)
+  // Construir @ para mostrar
   const taguser = '@' + who.split('@')[0];
 
-  // Intentar enviar la foto de perfil
+  // Intentar obtener la foto
   try {
     let pp = await conn.profilePictureUrl(who, 'image');
     await conn.sendFile(m.chat, pp, 'profile.jpg', `🖼️ *Foto de perfil de ${taguser}*`, m);

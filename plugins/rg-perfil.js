@@ -5,6 +5,8 @@ const handler = async (m, { conn, args }) => {
   const userId = m.quoted?.sender || m.mentionedJid?.[0] || m.sender
   const user = global.db.data.users[userId] || {}
 
+  let who = m.messageStubParameters[0]
+  let taguser = `@${who.split('@')[0]}`
   const nme = await conn.getName(userId)
   const tag = `@${userId.split('@')[0]}`
   const name = user.registered && user.name ? user.name : await conn.getName(userId)
@@ -26,7 +28,7 @@ const handler = async (m, { conn, args }) => {
   const tituloDecorado = dev
   const textoLargo = `
 *Perfil - ${botname}*
-  ╰╮ ${tag}
+  ╰╮ ${taguser}
 
 - *Nombre:* ${name}
 - *Edad:* ${edad}
@@ -44,7 +46,7 @@ const handler = async (m, { conn, args }) => {
 📝 *Registrado:* ${registered}
 `.trim()
 
-  await conn.sendLuffy(m.chat, textoCorto, tituloDecorado, textoLargo, img, img, 'https://instagram.com/dev.criss_vx', fkontak, { mentions: [user.Id] })
+  await conn.sendLuffy(m.chat, textoCorto, tituloDecorado, textoLargo, img, img, 'https://instagram.com/dev.criss_vx', fkontak, { mentions: [userId] })
   await m.react('💥')
 }
 

@@ -46,7 +46,7 @@ const handler = async (m, { conn, args }) => {
 📝 *Registrado:* ${registered}
 `.trim()
 
-  await conn.sendLuffy(m.chat, textoCorto, tituloDecorado, textoLargo, img, img, 'https://instagram.com/dev.criss_vx', fkontak, { mentions: [userId] })
+  await conn.sendLuffy(m.chat, textoCorto, tituloDecorado, textoLargo, img, img, 'https://instagram.com/dev.criss_vx', fkontak, { mentions: [user.Id] })
   await m.react('💥')
 }
 

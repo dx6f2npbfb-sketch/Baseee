@@ -35,7 +35,7 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
 }
 
 handler.help = ['bratvid <texto>']
-handler.command = ['bratvid', 'bratv']
+handler.command = ['bratvid2', 'bratv2']
 handler.tags = ['sticker']
 
 export default handler

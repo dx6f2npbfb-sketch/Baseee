@@ -40,8 +40,9 @@ global.emotg = '🐼🤍'
 global.msgtagall = '𝗝𝗢𝗧𝗔 𝗕𝗢𝗧 𝗟𝗢𝗦 𝗜𝗡𝗩𝗢𝗖𝗔 👹'
 global.moneda = 'ShadowCoins 🪙'
 
-global.session = 'SessionJota'
+global.sessions = 'SessionJota'
 global.jadi = 'JadiBots'
+global.nameqr = 'Jotinha'
 
 
 global.catalogo = fs.readFileSync('./media/catalogo.jpg')

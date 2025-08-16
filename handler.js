@@ -174,85 +174,73 @@ export async function handler(chatUpdate) {
 
         let _user = global.db.data && global.db.data.users && global.db.data.users[m.sender]
 
-const sendNum = m.sender.replace(/[^0-9]/g, '')
-const isROwner = [conn.decodeJid(global.conn.user.id), ...global.owner.map(([number]) => number)]
-  .map(v => v.replace(/[^0-9]/g, ''))
-  .includes(sendNum || m.key.remoteJid)
 
-/*
+// 🔧 Función utilitaria para limpiar número
+const cleanNumber = jid => jid ? jid.split(':')[0].replace(/[^0-9]/g, '') : ''
 
-        const sendNum = m?.sender?.replace(/[^0-9]/g, '')
-        const isROwner = [conn.decodeJid(global.conn?.user?.id), ...global.owner?.map(([number]) => number)].map(v => (v || '').replace(/[^0-9]/g, '')).includes(sendNum)
-*/
-/*
-        const isROwner = [conn.decodeJid(global.conn.user.id), ...global.owner.map(([number]) => number)].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)*/
-        const isOwner = isROwner || m.fromMe
-        const isMods = isOwner || global.mods.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
-        // const isMods = [conn.decodeJid(global.conn.user.id), ...global.mods.map(([number]) => number)].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
-        const isPrems = isOwner || global.prems.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender) || _user.prem == true || isMods;
+// 📌 Obtener número del remitente
+const sendNum = cleanNumber(m?.sender)
 
-        if (opts['queque'] && m.text && !(isMods || isPrems)) {
-            let queque = this.msgqueque, time = 1000 * 5
-            const previousID = queque[queque.length - 1]
-            queque.push(m.id || m.key.id)
-            setInterval(async function () {
-                if (queque.indexOf(previousID) === -1) clearInterval(this)
-                await delay(time)
-            }, time)
-        }
+// 📌 Detectar Owner real
+const isROwner = [
+  conn.decodeJid(global.conn?.user?.id || ''), 
+  ...(global.owner || []).map(([number]) => number)
+].map(v => cleanNumber(v)).includes(sendNum)
 
-        if (m.isBaileys)
-            return
-        m.exp += Math.ceil(Math.random() * 10)
+// 📌 Mods / Prems
+const isOwner = isROwner || m.fromMe
+const isMods = isOwner || (global.mods || [])
+  .map(v => cleanNumber(v) + '@s.whatsapp.net')
+  .includes(m.sender)
 
-        let usedPrefix
+const isPrems = isOwner 
+  || (global.prems || []).map(v => cleanNumber(v) + '@s.whatsapp.net').includes(m.sender) 
+  || _user?.prem === true 
+  || isMods
 
-const groupMetadata = (m.isGroup ? ((conn.chats[m.chat] || {}).metadata || await this.groupMetadata(m.chat).catch(_ => null)) : {}) || {}
-        const participants = (m.isGroup ? groupMetadata.participants : []) || []
-const normalizeJid = jid => jid?.replace(/[^0-9]/g, '')
-const cleanJid = jid => jid?.split(':')[0] || ''
-const senderNum = normalizeJid(m.sender)
-const botNums = [this.user.jid, this.user.lid].map(j => normalizeJid(cleanJid(j)))
+// 📌 Cola de mensajes (queque)
+if (opts['queque'] && m.text && !(isMods || isPrems)) {
+  let queque = this.msgqueque, time = 5000
+  const previousID = queque[queque.length - 1]
+  queque.push(m.id || m.key.id)
+  const interval = setInterval(async () => {
+    if (queque.indexOf(previousID) === -1) clearInterval(interval)
+    await delay(time)
+  }, time)
+}
+
+// 📌 Ignorar mensajes del propio Baileys
+if (m.isBaileys) return
+
+// 📌 Experiencia random
+m.exp += Math.ceil(Math.random() * 10)
+
+// 📌 Metadata de grupo
+const groupMetadata = m.isGroup ? await this.groupMetadata(m.chat).catch(_ => ({})) : {}
+const participants = groupMetadata?.participants || []
+
+// 📌 Detectar usuario/bot en grupo
+const senderNum = cleanNumber(m.sender)
+const botNums = [this.user?.jid, this.user?.lid].map(j => cleanNumber(j))
+
 const user = m.isGroup 
-  ? participants.find(u => normalizeJid(u.id) === senderNum) 
+  ? participants.find(u => cleanNumber(u.id) === senderNum) 
   : {}
+
 const bot = m.isGroup 
-  ? participants.find(u => botNums.includes(normalizeJid(u.id))) 
+  ? participants.find(u => botNums.includes(cleanNumber(u.id))) 
   : {}
+
+const userJidd = m.isGroup 
+  ? participants.find(u => conn.decodeJid(u.id) === m.sender) 
+  : {}
+
+// 📌 Roles de admin
 const isRAdmin = user?.admin === 'superadmin'
-const userJidd = (m.isGroup ? participants.find(u => conn.decodeJid(u.id) === m.sender) : {}) || {}
-const isAdmin = isRAdmin || user?.admin === 'admin' || userJidd?.admin == 'admin'
-const isBotAdmin = !!bot?.admin || bot?.admin === 'admin'
+const isAdmin = isRAdmin || user?.admin === 'admin' || userJidd?.admin === 'admin'
+const isBotAdmin = bot?.admin === 'admin' || bot?.admin === 'superadmin'
 
 
-/*
-
-const groupMetadata = (m.isGroup ? ((conn.chats[m.chat] || {}).metadata || await this.groupMetadata(m.chat).catch(_ => null)) : {}) || {}
-const participants = (m.isGroup ? groupMetadata.participants : []) || []    
-const normalizeJid = jid => jid?.replace(/[^0-9]/g, '')
-const cleanJid = jid => jid?.split(':')[0] || ''
-const senderNum = normalizeJid(m.sender)
-const botNums = [this.user?.jid, this.user?.lid].map(j => normalizeJid(cleanJid(j)))
-const user = m.isGroup 
-  ? participants.find(u => normalizeJid(u.id) === senderNum) 
-  : {}
-const bot = m.isGroup 
-  ? participants.find(u => botNums.includes(normalizeJid(u.id))) 
-  : {}
-
-const isRAdmin = user?.admin === 'superadmin'
-const isAdmin = isRAdmin || user?.admin === 'admin'
-const isBotAdmin = !!bot?.admin || bot?.admin === 'admin'*/
-
-/*
-        const groupMetadata = (m.isGroup ? ((conn.chats[m.chat] || {}).metadata || await this.groupMetadata(m.chat).catch(_ => null)) : {}) || {}
-        const participants = (m.isGroup ? groupMetadata.participants : []) || []
-        const user = (m.isGroup ? participants.find(u => conn.decodeJid(u.id) === m.sender) : {}) || {}
-        const bot = (m.isGroup ? participants.find(u => conn.decodeJid(u.id) == this.user.jid) : {}) || {}
-        const isRAdmin = user?.admin == 'superadmin' || false
-        const isAdmin = isRAdmin || user?.admin == 'admin' || false
-        const isBotAdmin = bot?.admin || false
-*/
         const ___dirname = path.join(path.dirname(fileURLToPath(import.meta.url)), './plugins')
         for (let name in global.plugins) {
             let plugin = global.plugins[name]

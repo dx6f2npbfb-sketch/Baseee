@@ -43,4 +43,4 @@ handler.help = ['pfp'];
 handler.tags = ['maker'];
 handler.command = ['pfp'];
 
-export default handler;*/
+export default handler;

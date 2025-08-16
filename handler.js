@@ -194,6 +194,7 @@ export async function handler(chatUpdate) {
         } catch (e) {
             console.error(e)
         }
+/*
         if (opts['nyimak'])  return
         if (!m.fromMe && opts['self'])  return
         if (opts['swonly'] && m.chat !== 'status@broadcast')  return
@@ -250,60 +251,82 @@ const isBotAdmin = bot.admin === 'admin' || bot.admin === 'superadmin'
 m.isWABusiness = ['smba', 'smbi'].includes(global.conn.authState?.creds?.platform)
 m.isChannel = m.chat.includes('@newsletter') || m.sender.includes('@newsletter')
 
+*/
 
+if (opts['nyimak']) return
+if (!m.fromMe && opts['self']) return
+if (opts['swonly'] && m.chat !== 'status@broadcast') return
+if (typeof m.text !== 'string') m.text = ''
 
-/*
-        let _user = global.db.data && global.db.data.users && global.db.data.users[m.sender]
+// ✅ Datos del usuario en DB
+let _user = global.db.data?.users?.[m.sender]
 
-const detectwhat = m.sender.includes('@lid') ? '@lid' : '@s.whatsapp.net'
-const isROwner = (global.owner || []).map(n => n + detectwhat).includes(m.sender)
+// 🔍 Normalizar número y detectar si es LID o JID
+const cleanSender = m.sender.replace(/[^0-9]/g, '')
+const senderType = m.sender.includes('@lid') ? '@lid' : '@s.whatsapp.net'
+
+// 🔑 Propietarios
+const isROwner = global.owner
+  .map(([num]) => num.replace(/[^0-9]/g, ''))
+  .some(n => [`${n}@s.whatsapp.net`, `${n}@lid`].includes(m.sender))
+
 const isOwner = isROwner || m.fromMe
-const isPrems = isROwner || global.db.data.users[m.sender].premiumTime > 0
+const isPrems = isROwner || _user?.premiumTime > 0
 
-        if (!isOwner && opts['self']) return;
-        if (opts['queque'] && m.text && !(isMods || isPrems)) {
-            let queque = this.msgqueque, time = 1000 * 5
-            const previousID = queque[queque.length - 1]
-            queque.push(m.id || m.key.id)
-            setInterval(async function () {
-                if (queque.indexOf(previousID) === -1) clearInterval(this)
-                await delay(time)
-            }, time)
+if (!isOwner && opts['self']) return
+
+// 🕒 Cola de mensajes
+if (opts['queque'] && m.text && !(isMods || isPrems)) {
+  let queque = this.msgqueque
+  const time = 5000
+  const prevID = queque[queque.length - 1]
+  queque.push(m.id || m.key.id)
+
+  if (prevID) {
+    await new Promise(resolve => {
+      let check = setInterval(() => {
+        if (!queque.includes(prevID)) {
+          clearInterval(check)
+          resolve()
         }
+      }, time)
+    })
+  }
+}
 
-        if (m.isBaileys)
-            return
-        m.exp += Math.ceil(Math.random() * 10)
-        
-        let usedPrefix
-        let _user = global.db.data && global.db.data.users && global.db.data.users[m.sender]
-// Obtener datos del grupo
-const groupMetadata = m.isGroup
-  ? await conn.groupMetadata(m.chat).catch(_ => null)
-  : {}
+// ❌ Ignorar mensajes internos de Baileys
+if (m.isBaileys) return
 
-const participants = m.isGroup ? groupMetadata.participants || [] : []
+// 🎲 Experiencia
+m.exp += Math.ceil(Math.random() * 10)
 
-// Este es tu ID real
-const senderJid = m.sender // Ej: '5493865642938@s.whatsapp.net'
-const senderLid = (participants.find(p => p.jid === senderJid) || {}).lid
+let usedPrefix // lo defines luego
 
-// Este es el ID del bot
-const botJid = conn.user?.jid // Ej: '5493865208712@s.whatsapp.net'
-const botLid = (participants.find(p => p.jid === botJid) || {}).lid
+// 📌 Obtener datos del grupo (con caché opcional)
+let groupMetadata = {}
+let participants = []
+if (m.isGroup) {
+  groupMetadata = await (this.groupMetadataCache?.[m.chat] 
+    || conn.groupMetadata(m.chat).catch(_ => null) || {})
+  participants = groupMetadata.participants || []
+}
 
-// Usuario en el grupo
-const user = participants.find(p => p.jid === senderJid || p.lid === senderLid) || {}
-const bot = participants.find(p => p.jid === botJid || p.lid === botLid) || {}
+// 🔍 Función para buscar participante (jid o lid)
+function findParticipant(jid) {
+  return participants.find(p => p.jid === jid || p.lid === jid.split('@')[0]) || {}
+}
 
+const user = findParticipant(m.sender)
+const bot  = findParticipant(conn.user?.jid)
+
+// 👑 Admins
 const isRAdmin = user.admin === 'superadmin'
 const isAdmin = isRAdmin || user.admin === 'admin'
+const isBotAdmin = ['admin', 'superadmin'].includes(bot.admin)
 
-const isBotAdmin = bot.admin === 'admin' || bot.admin === 'superadmin'
-
-// 📢 Detecta si es una cuenta Business o Canal
-m.isWABusiness = ['smba', 'smbi'].includes(global.conn.authState?.creds?.platform)
-m.isChannel = m.chat.includes('@newsletter') || m.sender.includes('@newsletter')*/
+// 🏢 Detectar Business y Canales
+m.isWABusiness = /smb[ai]/.test(global.conn.authState?.creds?.platform || '')
+m.isChannel = /@newsletter$/.test(m.chat) || /@newsletter$/.test(m.sender)
 
 
         const ___dirname = path.join(path.dirname(fileURLToPath(import.meta.url)), './plugins')

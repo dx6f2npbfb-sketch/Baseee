@@ -40,8 +40,8 @@ function start(file) {
     gradient: ['red', 'magenta']
   });
 
-  setupMaster({ exec: args[0], args: args.slice(1) });
-  let p = fork();
+ /* setupMaster({ exec: args[0], args: args.slice(1) });
+  let p = fork();*/
 
   p.on('message', data => {
     switch (data) {

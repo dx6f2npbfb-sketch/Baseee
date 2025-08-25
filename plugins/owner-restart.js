@@ -1,24 +1,22 @@
-/*
-const handler = async (m, {conn, isROwner, text}) => {
-  if (!process.send) throw 'Dont: node main.js\nDo: node index.js';
-    // conn.readMessages([m.key])
-    await m.reply('*🔄 Reiniciando el bot...*\n*» Espere un momento para volver a usar el Bot, puede tomar unos segundos.*');
-    process.send('reset');
-};
-handler.help = ['restart'];
-handler.tags = ['owner'];
-handler.command = ['restart', 'reiniciar'];
-handler.rowner = true;
-export default handler;
-*/
-const handler = async (m, { conn }) => {
-  await m.reply('🗣️ Reiniciando el bot...\n\nEspere unos segundos...');
-  
-  if (process.send) {
-    process.send('reset');
-  } else {
-    setTimeout(() => process.exit(0), 3000);
-  }
+//código creado por BrayanOFC 
+import os from 'os';
+
+let handler = async (m, { conn }) => {
+    try {
+        const start = Date.now();
+
+        const info = `
+*↻ 🚀 Reiniciando bot... ↷*
+        `.trim();
+
+        await conn.reply(m.chat, info, m);
+
+        setTimeout(() => process.exit(0), 3000);
+
+    } catch (error) {
+        console.error('[ERROR][REINICIO]', error);
+        await conn.reply(m.chat, `❌ Error\n${error.message || error}`, m);
+    }
 };
 
 handler.help = ['restart'];

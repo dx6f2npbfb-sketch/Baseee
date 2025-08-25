@@ -1,27 +1,25 @@
-//codigo creado por BrayanOFC 
-import os from 'os';
+import { spawn } from 'child_process'
+let handler = async (m, { conn, isROwner, text }) => {
 
-let handler = async (m, { conn }) => {
-    try {
-        const start = Date.now();
+if (!process.send) throw '*『✦』Reiniciar: node start.js*\n*『✦』Reiniciar: node index.js*'
 
-        const info = `
-*↻ 🚀 Reiniciando bot... ↷*
-        `.trim();
+if (conn.user.jid == conn.user.jid) {
 
-        await conn.reply(m.chat, info, m);
+const { key } = await conn.sendMessage(m.chat, {text: `🗂️ Cargando...`}, {quoted: m})
+await delay(1000 * 1)
+await conn.sendMessage(m.chat, {text: `📦 Cargando...`, edit: key})
+await delay(1000 * 1)
+await conn.sendMessage(m.chat, {text: `♻️ Cargando...`, edit: key})
+await conn.sendMessage(m.chat, {text: `*『☁️』Comenzar reinicio completo...*`, edit: key})
 
-        setTimeout(() => process.exit(0), 3000);
+process.send('reset')
+} else throw 'eh'
+}
 
-    } catch (error) {
-        console.error('[ERROR][REINICIO]', error);
-        await conn.reply(m.chat, `❌ Error\n${error.message || error}`, m);
-    }
-};
+handler.help = ['restart']
+handler.tags = ['owner']
+handler.command = ['restart', 'reiniciar'] 
+handler.rowner = true
 
-handler.help = ['restart'];
-handler.tags = ['owner'];
-handler.command = ['restart', 'reiniciar'];
-handler.rowner = true;
-
-export default handler;
+export default handler
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))

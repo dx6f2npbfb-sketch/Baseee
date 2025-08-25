@@ -1,4 +1,4 @@
-//código creado por BrayanOFC 
+//codigo creado por BrayanOFC 
 import os from 'os';
 
 let handler = async (m, { conn }) => {

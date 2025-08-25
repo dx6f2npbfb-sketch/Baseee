@@ -1,12 +1,13 @@
+// Código adaptado por BrayanOFC sin cluster
 import { join, dirname } from 'path';
 import { createRequire } from 'module';
 import { fileURLToPath } from 'url';
-//import { setupMaster, fork } from 'cluster'
 import { watchFile, unwatchFile } from 'fs';
 import cfonts from 'cfonts';
 import { createInterface } from 'readline';
 import yargs from 'yargs';
 import chalk from 'chalk';
+import { fork } from 'child_process';
 
 console.log(`\n💻 Iniciando Sistema`);
 
@@ -40,8 +41,9 @@ function start(file) {
     gradient: ['red', 'magenta']
   });
 
- /* setupMaster({ exec: args[0], args: args.slice(1) });
-  let p = fork();*/
+  let p = fork(args[0], args.slice(1), {
+    stdio: ['inherit', 'inherit', 'inherit', 'ipc']
+  });
 
   p.on('message', data => {
     switch (data) {
@@ -70,7 +72,7 @@ function start(file) {
   if (!opts['test']) {
     if (!rl.listenerCount('line')) {
       rl.on('line', line => {
-        p.emit('message', line.trim());
+        p.send(line.trim());
       });
     }
   }

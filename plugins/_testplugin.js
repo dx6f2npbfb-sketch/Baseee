@@ -39,6 +39,8 @@ handler.command = ['bratvid2', 'bratv2']
 handler.tags = ['sticker']
 
 export default handler*/
+
+/*
 import fetch from 'node-fetch';
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
@@ -148,4 +150,46 @@ handler.help = [
 handler.tags = ['herramientas'];
 handler.command = ['cambiar', 'convertir', 'divisas', 'moneda', 'monedas' ];
 
-export default handler;
+export default handler;*/
+
+
+
+// Mejorado por Criss Escobar
+
+let linkRegex = /chat.whatsapp.com\/([0-9A-Za-z]{20,24})/i
+
+let handler = async (m, { conn, text }) => {
+    if (!text) return m.reply('*⚠️ Ingresa el enlace de un grupo.*')
+
+    try {
+        let [_, code] = text.match(linkRegex) || []
+        if (!code) return m.reply('*⚠️ Enlace inválido.*')
+
+        // obtenemos el id del grupo a partir del link
+        let res = await conn.groupGetInviteInfo(code).catch(() => null)
+        if (!res || !res.id) return m.reply('*❌ No se pudo obtener información del grupo.*')
+
+        let groupId = res.id
+
+        // verificamos si el bot está en ese grupo
+        if (!(groupId in conn.chats)) {
+            return m.reply('*ℹ️ El bot no está en este grupo.*')
+        }
+
+        // salir del grupo
+        await conn.groupLeave(groupId)
+        m.reply(`*✅ ${botname} salió del grupo correctamente.*`)
+
+    } catch (e) {
+        console.error(e)
+        return m.reply('*✖️ Ocurrió un error al intentar salir del grupo.*')
+    }
+}
+
+handler.help = ['salirgc <link>']
+handler.tags = ['owner']
+handler.command = /^salirgc$/i
+handler.rowner = true
+handler.private = true
+
+export default handler

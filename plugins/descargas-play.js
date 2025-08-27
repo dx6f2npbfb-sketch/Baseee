@@ -17,17 +17,30 @@ const handler = async (m, { conn, command, text }) => {
   // Mensaje con botones
   let caption = `🎶 *${video.title}*\n\n⏱️ Duración: ${video.timestamp}\n👀 Vistas: ${video.views}\n📅 Publicado: ${video.ago}`
 
-  await conn.sendMessage(m.chat, {
-    image: { url: video.thumbnail },
-    caption,
-    footer: "📥 Elige una opción para descargar",
-    buttons: [
-      { buttonId: `.ytmp3 ${videoInfo.url}`, buttonText: { displayText: "🎧 Descargar MP3" }, type: 1 },
-      { buttonId: `.ytmp4 ${videoInfo.url}`, buttonText: { displayText: "🎬 Descargar MP4" }, type: 1 }
-    ],
-    headerType: 4
-  }, { quoted: m })
-}
+          await conn.sendMessage(m.chat, {
+            image: thumbnail,
+            caption: messageText,
+            footer: dev,
+            contextInfo: {
+                mentionedJid: [m.sender],
+                forwardingScore: 999,
+                isForwarded: true
+            },
+            buttons: [
+                {
+                    buttonId: `${usedPrefix}ytmp3 ${video.url}`,
+                    buttonText: { displayText: 'Audio' },
+                    type: 1,
+                },
+                {
+                    buttonId: `${usedPrefix}ytmp4 ${video.url}`,
+                    buttonText: { displayText: 'Vídeo' },
+                    type: 1,
+                }
+            ],
+            headerType: 1,
+            viewOnce: true
+        }, { quoted: m });
 
 handler.command = ["play", "play2"]
 handler.tags = ["descargas"]

@@ -9,7 +9,7 @@ const handler = async (m, { conn, args }) => {
   const tag = `@${userId.split('@')[0]}`
   const name = user.registered && user.name ? user.name : await conn.getName(userId)
   const perfilUrl = await conn.profilePictureUrl(userId, 'image')
-    .catch(() => 'https://files.catbox.moe/xr2m6u.jpg')
+    .catch(() => 'https://files.catbox.moe/dx28sc.webp')
   const img = await (await fetch(perfilUrl)).buffer()
 
   const edad = user.age || 'No registrada'

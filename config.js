@@ -17,7 +17,7 @@ global.owner = [
 ]
 
 global.creator = [
-   ['51927238856', 'Dev Criss 🇦🇱', true]
+   ['573155227977', 'Jota 🐼', true]
 ]
 
 global.mods = ['51990841568', '51965911060', '51906168999']
@@ -25,24 +25,24 @@ global.prems = ['51965911060', '51906168999']
 
 
 global.packname = 'Jota Bot MD'
-global.botname = 'Jota Bot - MD'
-global.wm = 'Jota Bot - MD'
-global.author = '𝖲𝗁⍺𝖽ᦅ𝗐′𝗌 𝖢𝗅𝗎𝖻'
+global.botname = 'Yancito Bot - MD'
+global.wm = 'Yancito Bot - MD'
+global.author = '𝗬𝗮𝗻𝗰𝗶𝘁𝗼 𝗕𝗼𝘁'
 global.dev = 'Yancito Bot MD'
 global.errorm = 'Error: ${error.message}'
-global.namebot = 'Jota'
-global.nameai = 'Jota Ai'
-global.textbot = 'JOTA BOT MD'
-global.textmain = 'JOTABOT'
-global.textmain2 = 'Jota Bot MD'
+global.namebot = 'Yancito'
+global.nameai = 'Yancito Ai'
+global.textbot = 'YANCITO BOT MD'
+global.textmain = 'YANCITOBOT'
+global.textmain2 = 'Yancito Bot MD'
 global.vs = '2.1.0'
 global.emotg = '🕷️'
 global.msgtagall = '𝗠𝗘𝗡𝗖𝗜𝗢𝗡 𝗚𝗘𝗡𝗘𝗥𝗔𝗟 🕷️'
-global.moneda = 'ShadowCoins 🪙'
+global.moneda = 'YancitoCoins 🪙'
 
-global.sessions = 'SessionJota'
+global.sessions = 'SessionYancito'
 global.jadi = 'JadiBots'
-global.nameqr = 'Jotinha'
+global.nameqr = 'Yancito'
 
 
 global.catalogo = fs.readFileSync('./media/catalogo.jpg')

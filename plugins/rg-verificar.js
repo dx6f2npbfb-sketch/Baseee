@@ -37,7 +37,7 @@ await m.react('💌')
   user.regTime = +new Date
   user.registered = true
   user.money += 600
-  user.coins += 15
+  user.coins += 30
   user.exp += 245
   user.joincount += 5
 
@@ -56,7 +56,7 @@ await m.react('💌')
 
 *Recompensas:*
 
-🪙 15 ShadowCoins
+🪙 30 YancitoCoins
 💫 245 Exp
 
 > ✎ Usa *.profile* para ver tu perfil.`.trim()

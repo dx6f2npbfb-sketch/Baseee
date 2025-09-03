@@ -17,7 +17,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     let rtotalreg = Object.values(global.db.data.users).filter(user => user.registered).length
     const readMore = '\u200b'.repeat(850)
 
-    await m.react('🐼')
+    await m.react('🕷️')
 
     const vid = 'https://files.catbox.moe/js58k4.mp4'
 
@@ -82,7 +82,7 @@ for (let key in emojis) {
 
 
     before: `ㅤㅤ   ꒰꛱ ͜ ꛱|꛱ ꛱͜ |꛱ ꛱͜ |꛱ ͜ ꛱|꛱ ͜ |୨🫧୧꛱|꛱ ꛱͜ |꛱ ꛱͜ |꛱ ͜ ꛱|꛱ ꛱͜ |꛱ ͜ ꒱
-Ꮺ *H𐐫l⍺᳟ ࣪ ᦷᩘ${taguser}*
+Ꮺ *H𐐫l⍺᳟ ࣪ ᦷᩘ${tauser}*
 *Bienvenido/a*  ࣪  ⿻   al   ࣭  ෨
 ࣭   ✿  *Menú  de  JotaBot*  𓈒𓏸      ☁︎    
 ﹏͜͡ *${saludo}* ﹏͜͡

@@ -11,7 +11,7 @@ if (!text) return conn.reply(m.chat, `*${emojis} Agrega un texto.*`, m, rcanal);
 const who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender; 
 const mentionRegex = new RegExp(`@${who.split('@')[0].replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*`, 'g');
 const mishi = text.replace(mentionRegex, '');
-if (mishi.length > 40) return conn.reply(m.chat, '*⚠️ El texto no puede tener mas de 30 caracteres* \n >  acaso vas a escribir tu testamento hijx?', m);
+if (mishi.length > 40) return conn.reply(m.chat, '*⚠️ El texto no puede tener mas de 30 caracteres* \n> acaso vas a escribir tu testamento hijx?', m);
 const pp = await conn.profilePictureUrl(who).catch((_) => 'https://telegra.ph/file/24fa902ead26340f3df2c.png')
 const nombre = await conn.getName(who)
 const obj = {"type": "quote", "format": "png", "backgroundColor": "#000000", "width": 512, "height": 768, "scale": 2, "messages": [{"entities": [], "avatar": true, "from": {"id": 1, "name": usname, "photo": {url: `${pp}`}}, "text": mishi, "replyMessage": {}}]};

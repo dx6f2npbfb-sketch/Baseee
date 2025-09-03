@@ -34,7 +34,7 @@ global.textmain = 'YANCITOBOT'
 global.textmain2 = 'Yancito Bot MD'
 global.vs = '2.1.0'
 global.emotg = '🕷️'
-global.msgtagall = '𝗠𝗘𝗡𝗖𝗜𝗢𝗡 𝗚𝗘𝗡𝗘𝗥𝗔𝗟 🕷️'
+global.msgtagall = '🕷️ ᴍᴇɴᴄɪoɴ ɢᴇɴᴇʀᴀʟ 🕷️\n ʏᴀɴꜱɪᴛᴏ ʙᴏᴛ ʟᴏꜱ ɪɴᴠᴏᴄᴀ ✨️'
 global.moneda = 'YancitoCoins 🪙'
 
 global.sessions = 'SessionYancito'

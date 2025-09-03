@@ -37,7 +37,7 @@ global.textmain = 'JOTABOT'
 global.textmain2 = 'Jota Bot MD'
 global.vs = '2.1.0'
 global.emotg = '🕷️'
-global.msgtagall = '𝗬𝗔𝗡𝗖𝗜𝗧𝗢 𝗕𝗢𝗧 𝗟𝗢𝗦 𝗜𝗡𝗩𝗢𝗖𝗔 🕷️'
+global.msgtagall = '𝗠𝗘𝗡𝗖𝗜𝗢𝗡 𝗚𝗘𝗡𝗘𝗥𝗔𝗟 🕷️'
 global.moneda = 'ShadowCoins 🪙'
 
 global.sessions = 'SessionJota'

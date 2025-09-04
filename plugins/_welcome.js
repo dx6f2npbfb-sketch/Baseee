@@ -93,8 +93,7 @@ if (chat.welcome && m.messageStubType == 32) {
   const groupName = groupMetadata.subject
   const groupDesc = groupMetadata.desc || 'sin descripción'
 
-  const msgsBye = [
-    `╭───────👾───────╮
+  const msgsBye = [ `╭───────👾───────╮
      🚪 SE FUE ${taguser} 🚪
 ╰───────👾───────╯
 
@@ -112,7 +111,7 @@ ${taguser} decidió
 ➤ x ser manco nivel DIOS 🤡  
 
 🪦 Que le vaya bien, por la sombrita...`
-  ]
+]
 
   let bye = chat.sBye
     ? chat.sBye

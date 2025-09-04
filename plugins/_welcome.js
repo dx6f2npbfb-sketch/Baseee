@@ -4,6 +4,7 @@ import fetch from 'node-fetch'
 export async function before(m, { conn, participants, groupMetadata }) {
   if (!m.messageStubType || !m.isGroup) return true
 
+  let insta = 'https://instagram.com/ineffable.mvrco'
   let groupSize = participants.length
   if (m.messageStubType == 27) {
     groupSize++;
@@ -12,130 +13,52 @@ export async function before(m, { conn, participants, groupMetadata }) {
   }
   let who = m.messageStubParameters[0]
   let taguser = `@${who.split('@')[0]}`
-  let pp = await conn.profilePictureUrl(m.messageStubParameters[0], 'image').catch(_ => 'https://files.catbox.moe/xr2m6u.jpg')
+  let pp = await conn.profilePictureUrl(m.messageStubParameters[0], 'image').catch(_ => 'https://files.catbox.moe/jbecfc.jpg')
   let img = await (await fetch(`${pp}`)).buffer()
   let chat = global.db.data.chats[m.chat]
   let txt = `¡Bienvenid@! ${await conn.getName(who)}\nAhora somos ${groupSize} miembros en el grupo.`
   let txt1 = `¡Adiós! ${await conn.getName(who)}\nAhora somos ${groupSize} miembros en el grupo`
   let txt2 = `Se salió ${await conn.getName(who)}\nAhora somos ${groupSize} miembros en el grupo.`
-  let sunflare = `Yancito Bot`
-  let sunflare1 = `Yancito Bot MD`
-  let sunflare2 = `Yan Bot`
+  let sunflare = `𝙽𝚎𝚠 𝙼𝚎𝚖𝚋𝚎𝚛`
+  let sunflare1 = `𝙺𝚒𝚌𝚔𝚎𝚍 𝙼𝚎𝚖𝚋𝚎𝚛`
+  let sunflare2 = `𝙱𝚢𝚎 𝙼𝚎𝚖𝚋𝚎𝚛`
 
-if (chat.welcome && m.messageStubType == 27) {
-  const groupName = groupMetadata.subject
-  const groupDesc = groupMetadata.desc || 'sin descripción'
+  if (chat.welcome && m.messageStubType == 27) {
+    const groupName = groupMetadata.subject
+    const groupDesc = groupMetadata.desc || 'sin descripción'
 
-  const msgsWelcome = [
-    `┏━━━━━━━━━━━━━━━━━━━┓
-┃      ✨ 𝗕𝗜𝗘𝗡𝗩𝗘𝗡𝗜𝗗𝗫  ✨     ┃ 
-┗━━━━━━━━━━━━━━━━━━━┛
-╭─▸ 👤 Nuevo miembro:  
-│      ${taguser} 
-│
-╰─▸ 🎉 Aquí se viene a:  
-       ─ Reír 😂  
-       ─ Compartir 🌍  
-       ─ Pasarla brutal 🔥  
-       ─ Hacer historia ⭐
-       
-┏━━━━━ 🎊 DISFRUTA 🎊 ━━━━━┓
-┃   🚀 Ponte cómodx, que esto  
-┃   es más que un grupo...  
-┃   ¡Es una familia! 💜  
-┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
-
-> By ${botname}`,
-    `╔═══════════════════╗
-  🎮 ＢＩＥＮＶＥＮＩＤ X 🎮
-╚═══════════════════╝
-
-⚡ ${taguser} ⚡  
-✨ ¡Un gusto tenerte aquí! ✨  
-
-📜 Reglas básicas:  
-➤ Respeta a todos 🤝  
-➤ Lee la descripción 📖  
-➤ Disfruta y juega limpio 🕹️  
-
-「 ¡Que comience la partida! 」🔥\n
-⚔️ ${groupName.toUpperCase()} ⚔️`
-  ]
-
-
-  let bienvenida = chat.sWelcome
-    ? chat.sWelcome
+    let bienvenida = chat.sWelcome
+      ? chat.sWelcome
         .replace(/@user/g, taguser)
         .replace(/@group/g, groupName)
         .replace(/@desc/g, groupDesc)
-    : msgsWelcome[Math.floor(Math.random() * msgsWelcome.length)]
-
-  await conn.sendLuffy(m.chat, txt, sunflare, bienvenida, img, img, channel, estilo)
-}
-
-if (chat.welcome && m.messageStubType == 28) {
-  const groupName = groupMetadata.subject
-  const groupDesc = groupMetadata.desc || 'sin descripción'
-
-  let ban = chat.sKick
-    ? chat.sKick
-        .replace(/@user/g, taguser)
-        .replace(/@group/g, groupName)
-        .replace(/@desc/g, groupDesc)
-
-   : `╔════ 💀 ════╗
-   ✂️ ELIMINADX ✂️
-╚════ 💀 ════╝
-
-${taguser} fue sacadx del grupo 🥱  
-➤ Jugador expulsado por planta 🌱  
-➤ Pa adornar esta la lider 😏  
-
-🚷 Next... ¡que pase el que sigue!`, 
-
-`︵‿︵‿୨♡୧‿︵‿︵
-     🗑️ ${taguser} 🗑️
-   FUE ELIMINADX
-︵‿︵‿୨♡୧‿︵‿︵
-
-👉 No dio el level  
-👉 Kick directo del grupo  
-👉 No juega ni con la comida 😂  
-
-Gracias por participar… loser 🎯` 
-    await conn.sendLuffy(m.chat, txt1, txt2, sunflare1, ban, img, img, ig, estilo)
+      : `*¡Bienvenido(a)!*\n෫ࣲׄ֟፝͡${taguser} ☕꒱\n\nᦷᩘᦷ   ݂ 𝖣𝗂𝗌𝖿𝗋𝗎𝗍𝖺 𝖽𝖾 𝗍𝗎 𝖾𝗌𝗍𝖺𝖽𝗂𝖺.\n✎ 𝖴𝗌𝖺 *#help* 𝗉𝖺𝗋𝖺 𝗏𝖾𝗋 𝗅𝖺 𝗅𝗂𝗌𝗍𝖺 𝖽𝖾 𝖼𝗈𝗆𝖺𝗇𝖽𝗈𝗌.\n\n> ${dev}`
+    await conn.sendLuffy(m.chat, txt, sunflare, bienvenida, img, img, insta, fkontak)
   }
 
-if (chat.welcome && m.messageStubType == 32) {
-  const groupName = groupMetadata.subject
-  const groupDesc = groupMetadata.desc || 'sin descripción'
+  if (chat.welcome && m.messageStubType == 28) {
+    const groupName = groupMetadata.subject
+    const groupDesc = groupMetadata.desc || 'sin descripción'
 
-const msgsbye : [ `╭───────👾───────╮
-     🚪 SE FUE ${taguser} 🚪
-╰───────👾───────╯
-
-🛑 No aguantó la presión  
-😂 Otro caído en el intento  
-🔥 El grupo sigue... pero sin ti  
-
-「 Gracias por nada bebé 🐌 」`,
-    `╔════ ⚰️ ════╗
-   👋 ADIÓS NOOB 👋
-╚════ ⚰️ ════╝
-
-${taguser} decidió  
-➤ Abandonar el grupo 🎮  
-➤ x ser manco nivel DIOS 🤡  
-
-🪦 Que le vaya bien, por la sombrita...`,
-]
-
-  let bye = chat.sBye
-    ? chat.sBye
+    let ban = chat.sKick
+      ? chat.sKick
         .replace(/@user/g, taguser)
         .replace(/@group/g, groupName)
         .replace(/@desc/g, groupDesc)
-    : msgsBye[Math.floor(Math.random() * msgsBye.length)]
+      : `*¡Expulsado!*\n෫ࣲׄ֟፝͡${taguser} 👊🏻꒱\n\nᏊ⁠ 𝖴𝗇 𝗇𝖾𝗀𝗋𝗈 𝗆𝖾𝗇𝗈𝗌 𝖾𝗇 𝖾𝗅 𝗀𝗋𝗎𝗉𝗈, 𝗉𝗈𝗋 𝗇𝗈 𝗈𝖻𝖾𝖽𝖾𝖼𝖾𝗋 𝗅𝖺𝗌 𝗋𝖾𝗀𝗅𝖺𝗌.\n ׅ⿻ 𝖮𝗃𝖺𝗅𝖺 𝗒 𝗅𝖺 𝖾𝗅𝗂𝗆𝗂𝗇𝖺𝖼𝗂𝗈𝗇 𝗅𝖾 𝗁𝖺𝗀𝖺 𝗋𝖾𝖿𝗅𝖾𝗑𝗂𝗈𝗇𝖺𝗋 𝗑𝖣\n\n> ${dev}`
+    await conn.sendLuffy(m.chat, txt1, sunflare1, ban, img, img, insta, fkontak)
+  }
 
-    await conn.sendLuffy(m.chat, txt1, sunflare2, bye, img, img, grupo, estilo)
-  }}
+  if (chat.welcome && m.messageStubType == 32) {
+    const groupName = groupMetadata.subject
+    const groupDesc = groupMetadata.desc || 'sin descripción'
+
+    let bye = chat.sBye
+      ? chat.sBye
+        .replace(/@user/g, taguser)
+        .replace(/@group/g, groupName)
+        .replace(/@desc/g, groupDesc)
+      : `*¡Hasta Luego!*\n෫ࣲׄ֟፝͡${taguser} 👋🏻꒱\n\nᏊ⁠˘⁠ ⁠ꈊ⁠ ⁠˘⁠ ⁠Ꮚ 𝖦𝗋𝖺𝖼𝗂𝖺𝗌 𝗉𝗈𝗋 𝖾𝗌𝗍𝖺𝗋 𝖺𝗊𝗎𝗂. 𝖳𝗎 𝗉𝗋𝖾𝗌𝖾𝗇𝖼𝗂𝖺 𝖿𝗎𝖾 𝗎𝗇 𝖾𝗌𝗍𝗈𝗋𝖻𝗈.\n ׅ⿻ 𝖮𝗃𝖺𝗅𝖺 𝗒 𝗌𝖾 𝗅𝗈 𝗏𝗂𝗈𝗅𝖾𝗇 𝗅𝗈𝗌 𝗇𝖾𝗀𝗋𝗈𝗌 𝗉𝗈𝗋 𝖺𝗅𝗍𝖺 𝗉𝗎𝗍𝖺.\n\n> ${dev}`
+    await conn.sendLuffy(m.chat, txt1, sunflare2, bye, img, img, insta, fkontak)
+  }
+}

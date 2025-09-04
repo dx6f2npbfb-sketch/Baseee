@@ -18,8 +18,8 @@ let handler = async (m, { conn }) => {
 *Fecha:* ${fecha}
 \`\`\`₊ PARTICIPACIÓN EN GUERRA DE CLANES🔥\`\`\`
 *Hora:*
-⏰🇲🇽: 6 PM
-⏰🇨🇴: 7 PM
+⏰🇵🇪: 5 PM hasta 9 PM
+⏰🇦🇷: 7 PM hasta 11 PM
 
 » *PARTICIPANTES:*
 ㅤ
@@ -61,10 +61,10 @@ let handler = async (m, { conn }) => {
 ┊👑 ➤ 
 ┊⚜️ ➤ 
 ┊⚜️ ➤ 
-┊⚜️ ➤ 
+┊🕷️ ➤ 
 ┊ 
 ┊👑 ➤ 
-┊⚜️ ➤ 
+┊🔱 ➤ 
 ┊⚜️ ➤ 
 ┊⚜️ ➤ 
 ┊ 

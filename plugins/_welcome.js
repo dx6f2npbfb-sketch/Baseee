@@ -117,6 +117,7 @@ ${taguser} decidió
 ➤ Mucho nivel pa alguien tan malo. 😌  
 
 🪦 Que le vaya bien, por la sombra...`
+]
     await conn.sendLuffy(m.chat, txt1, sunflare2, bye, img, img, insta, fkontak)
   }
 }

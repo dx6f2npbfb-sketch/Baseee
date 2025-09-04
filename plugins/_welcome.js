@@ -89,7 +89,8 @@ ${taguser} fue sacadx del grupo 🥱
 ➤ Jugador expulsado por planta 🌱  
 ➤ Pa adornar esta la lider 😏  
 
-🚷 Next... ¡que pase el que sigue!`,
+🚷 Next... ¡que pase el que sigue!`, 
+
 `︵‿︵‿୨♡୧‿︵‿︵
      🗑️ ${taguser} 🗑️
    FUE ELIMINADX
@@ -99,7 +100,7 @@ ${taguser} fue sacadx del grupo 🥱
 👉 Kick directo del grupo  
 👉 No juega ni con la comida 😂  
 
-「 Gracias por participar… loser 🎯 」
+Gracias por participar… loser 🎯` 
     await conn.sendLuffy(m.chat, txt1, sunflare1, ban, img, img, ig, estilo)
   }
 

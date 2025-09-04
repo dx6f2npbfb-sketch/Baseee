@@ -99,7 +99,7 @@ if (chat.welcome && m.messageStubType == 32) {
 
 🛑 No aguantó la presión  
 😂 Otro caído en el intento  
-🔥 El grupo sigue... pero sin ti  
+🔥 El grupo sigue, pero sin ti  
 
 「 Gracias por nada bebé 🐌 」`,
     `╔════ ⚰️ ════╗
@@ -110,7 +110,7 @@ ${taguser} decidió
 ➤ Abandonar el grupo 🎮  
 ➤ x ser manco nivel DIOS 🤡  
 
-🪦 Que le vaya bien, por la sombrita.`,
+🪦 Que le vaya bien, por la sombrita`,
 ]
 
   let bye = chat.sBye

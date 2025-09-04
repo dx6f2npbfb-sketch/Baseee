@@ -1,12 +1,10 @@
-/* 𝗣𝗼𝘄𝗲𝗿𝗲𝗱 𝗯𝘆 𝗦𝗵𝗮𝗱𝗼𝘄'𝘀 𝗖𝗹𝘂𝗯 🌺᭄
-𝖢𝗋𝖾𝖺𝖽𝗈 𝗉𝗈𝗋 𝖣𝖾𝗏.𝖢𝗋𝗂𝗌𝗌 🇦🇱
-https://whatsapp.com/channel/0029VauTE8AHltY1muYir31n*/
+
 
 import fetch from 'node-fetch'
 
 var handler = async (m, { conn, usedPrefix, command, args }) => {
     if (!args[0]) {
-        return await conn.reply(m.chat, `*${emojis} Ingresa una url válida de TikTok.*`, m, rcanal);
+        return await conn.reply(m.chat, `*${emojis} Ingresa una url válida de TikTok.*`, m);
     }
 
     if (!args[0].match(/(https?:\/\/)?(www\.)?(vm\.|vt\.)?tiktok\.com\//)) {

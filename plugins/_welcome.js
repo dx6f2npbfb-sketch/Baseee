@@ -120,9 +120,11 @@ ${taguser} decidió
 `╭───────👾───────╮
      🚪 SE FUE 🚪
      ${taguser}
-╰───────👾───────╯\n🛑 No aguantó la presión  
+╰───────👾───────╯
+🛑 No aguantó la presión  
 😂 Otro caído en el intento  
-🔥 El grupo sigue... pero sin ti\n「 Gracias por nada, bebé 🐌 」`
+🔥 El grupo sigue... pero sin ti
+「 Gracias por nada, bebé 🐌 」`
     await conn.sendLuffy(m.chat, txt1, sunflare2, bye, img, img, insta, fkontak)
   }
 }

@@ -81,7 +81,8 @@ if (chat.welcome && m.messageStubType == 28) {
         .replace(/@user/g, taguser)
         .replace(/@group/g, groupName)
         .replace(/@desc/g, groupDesc)
-  const msgskick : [ `╔════ 💀 ════╗
+
+   const msgskick : [ `╔════ 💀 ════╗
    ✂️ ELIMINADX ✂️
 ╚════ 💀 ════╝
 

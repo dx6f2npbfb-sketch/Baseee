@@ -110,7 +110,11 @@ ${taguser} decidió
 ➤ Abandonar el grupo 🎮  
 ➤ x ser manco nivel DIOS 🤡  
 
-🪦 Que le vaya bien, por la sombrita...`
+🪦 Que le vaya bien, por la sombrita...`,
+
+`👋`,
+
+`👋` 
 ]
 
   let bye = chat.sBye

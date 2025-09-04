@@ -5,7 +5,7 @@ const handler = async (m, { text, usedPrefix, command, quoted }) => {
   //const name = m.name || 'Usuario Anonimo';
   const name = usname;
 
-  if (!text) return conn.reply(m.chat, `*${emojis} Ingresa el texto para crear la frase.*\n> *Ejemplo:* ${usedPrefix + command} Hola mundo | https://example.com/pp.jpg`, m, rcanal);
+  if (!text) return conn.reply(m.chat, `*${emojis} Ingresa el texto para crear la frase.*\n> *Ejemplo:* ${usedPrefix + command} Hola mundo | https://example.com/pp.jpg`, m);
 
   let [quoteText, ppUrl] = text.split('|').map(a => a.trim());
   if (!quoteText) return m.reply('Texto para la frase no definido.');

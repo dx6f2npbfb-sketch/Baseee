@@ -81,7 +81,7 @@ for (let key in emojis) {
     let defaultMenu = {
 
 
-    before: `---------🕷️𝐌𝐄𝐍𝐔 ${botname}🕷️ ---------
+    before: `---------🕷️𝐌𝐄𝐍𝐔 ${namebot}🕷️ ---------
 • 𝙷𝚘𝚕𝚊 ${taguser} 👋
 • ${saludo}
 

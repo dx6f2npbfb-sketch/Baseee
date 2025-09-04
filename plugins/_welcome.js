@@ -43,7 +43,7 @@ if (chat.welcome && m.messageStubType == 27) {
 ┃   ¡Es una familia! 💜  
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
-By ${botname}`,
+> By ${botname}`,
     `╔═══════════════════╗
   🎮 ＢＩＥＮＶＥＮＩＤ X 🎮
 ╚═══════════════════╝
@@ -56,8 +56,8 @@ By ${botname}`,
 ➤ Lee la descripción 📖  
 ➤ Disfruta y juega limpio 🕹️  
 
-⚔️ ${groupName.toUpperCase()} ⚔️  
-「 ¡Que comience la partida! 」🔥`
+「 ¡Que comience la partida! 」🔥\n
+⚔️ ${groupName.toUpperCase()} ⚔️`
   ]
 
 

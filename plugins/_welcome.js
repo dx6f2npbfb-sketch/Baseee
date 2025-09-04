@@ -32,7 +32,39 @@ export async function before(m, { conn, participants, groupMetadata }) {
         .replace(/@user/g, taguser)
         .replace(/@group/g, groupName)
         .replace(/@desc/g, groupDesc)
-      : `*¡Bienvenido(a)!*\n෫ࣲׄ֟፝͡${taguser} ☕꒱\n\nᦷᩘᦷ   ݂ 𝖣𝗂𝗌𝖿𝗋𝗎𝗍𝖺 𝖽𝖾 𝗍𝗎 𝖾𝗌𝗍𝖺𝖽𝗂𝖺.\n✎ 𝖴𝗌𝖺 *#help* 𝗉𝖺𝗋𝖺 𝗏𝖾𝗋 𝗅𝖺 𝗅𝗂𝗌𝗍𝖺 𝖽𝖾 𝖼𝗈𝗆𝖺𝗇𝖽𝗈𝗌.\n\n> ${dev}`
+      : `*¡┏━━━━━━━━━━━━━━━━━━━┓
+┃      ✨ 𝗕𝗜𝗘𝗡𝗩𝗘𝗡𝗜𝗗𝗫  ✨     ┃ 
+┗━━━━━━━━━━━━━━━━━━━┛
+╭─▸ 👤 Nuevo miembro:  
+│      ${taguser} 
+│
+╰─▸ 🎉 Aquí se viene a:  
+       ─ Reír 😂  
+       ─ Compartir 🌍  
+       ─ Pasarla brutal 🔥  
+       ─ Hacer historia ⭐
+       
+┏━━━━━ 🎊 DISFRUTA 🎊 ━━━━━┓
+┃   🚀 Ponte cómodx, que esto  
+┃   es más que un grupo...  
+┃   ¡Es una familia! 💜  
+┗━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+By ${botname}`,
+`╔═══════════════════╗
+   🎮 ＢＩＥＮＶＥＮＩＤ X 🎮
+╚═══════════════════╝
+
+⚡ ${taguser} ⚡  
+✨ ¡Un gusto tenerte aquí! ✨  
+
+📜 Reglas básicas:  
+➤ Respeta a todos 🤝  
+➤ Lee la descripción 📖  
+➤ Disfruta y juega limpio 🕹️  
+
+⚔️ ${groupName.toUpperCase()} ⚔️  
+「 ¡Que comience la partida! 」🔥`
     await conn.sendLuffy(m.chat, txt, sunflare, bienvenida, img, img, insta, fkontak)
   }
 

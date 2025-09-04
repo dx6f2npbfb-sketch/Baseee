@@ -1,4 +1,3 @@
-
 import { sticker } from '../lib/sticker.js'
 import uploadFile from '../lib/uploadFile.js'
 import uploadImage from '../lib/uploadImage.js'
@@ -8,15 +7,15 @@ let handler = async (m, { conn, args }) => {
   let stiker = false
   let q = m.quoted || m
   let mime = (q.msg || q).mimetype || q.mediaType || ''
-  const mensajeError = `*${emojis} La conversión a fallado, responde a un vídeo o imagen la cual será convertido en sticker, debe responder al archivo multimedia o enviarlo junto al comando.*`
+  const mensajeError = `${xsticker} responde a una imagen o video.`
 
   try {
     if (mime.startsWith('image/') || mime.startsWith('video/') || mime === 'image/webp') {
       let media = await q.download?.()
-      if (!media) return conn.reply(m.chat, mensajeError,m)
+      if (!media) return conn.reply(m.chat, mensajeError, m)
 
       try {
-        stiker = await sticker(media, false, global.packN, global.authorN)
+        stiker = await sticker(media, false, global.packN, global.authN)
       } catch (e) {
         console.error('❌ Error al generar sticker directo:', e)
         let url
@@ -29,14 +28,14 @@ let handler = async (m, { conn, args }) => {
           return conn.reply(m.chat, '❌ No se pudo obtener una URL válida del archivo.', m)
         }
 
-        stiker = await sticker(false, url, global.packN, global.authorN)
+        stiker = await sticker(false, url, global.packN, global.authN)
       }
 
     } else if (args[0]) {
       if (!isValidUrl(args[0])) return conn.reply(m.chat, '❌ La *URL* es inválida.', m)
-      stiker = await sticker(false, args[0], global.packN, global.authorN)
+      stiker = await sticker(false, args[0], global.packN, global.authN)
     } else {
-      return conn.reply(m.chat, mensajeError, m, rcanal)
+      return conn.reply(m.chat, mensajeError, m)
     }
 
   } catch (e) {

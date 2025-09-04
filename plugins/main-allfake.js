@@ -133,9 +133,9 @@ global.taguser = '@' + m.sender.split("@s.whatsapp.net")
 var more = String.fromCharCode(8206)
 global.readMore = more.repeat(850)
 
-global.authN = `ꘓꘓ Jota Bot`;
+global.authN = `ꘓꘓ ${botname}`;
 
-global.packN= `ꘓꘓ  𝖲ᥙᥒ𝖿͟ᥣ͟ᥲ𝗋ᥱࣲ 𝖳ᥱᥲ𝗆  彡`*/
+global.packN= `${namebot}`*/
 
 //FAKES
 global.fkontak = { key: { participants:"0@s.whatsapp.net", "remoteJid": "status@broadcast", "fromMe": false, "id": "Halo" }, "message": { "contactMessage": { "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD` }}, "participant": "0@s.whatsapp.net" }

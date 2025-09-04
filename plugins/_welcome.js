@@ -19,6 +19,7 @@ export async function before(m, { conn, participants, groupMetadata }) {
   let txt1 = `¡Adiós! ${await conn.getName(who)}\nAhora somos ${groupSize} miembros en el grupo`
   let txt2 = `Se salió ${await conn.getName(who)}\nAhora somos ${groupSize} miembros en el grupo.`
   let sunflare = `Yancito Bot `
+  let sunflare2 = `Yancito Bot MD`
 
 if (chat.welcome && m.messageStubType == 27) {
   const groupName = groupMetadata.subject
@@ -120,5 +121,5 @@ ${taguser} decidió
         .replace(/@desc/g, groupDesc)
     : msgsBye[Math.floor(Math.random() * msgsBye.length)]
 
-    await conn.sendLuffy(m.chat, txt1, sunflare1, bye, img, img, grupo, estilo)
+    await conn.sendLuffy(m.chat, txt1, sunflare2, bye, img, img, grupo, estilo)
   }}

@@ -120,7 +120,7 @@ ${readMore}
 
 
    await conn.sendMessage(m.chat, {
-    imagen: { url: img },
+    image: { url: img },
     caption: menuText,
     mentions: [m.sender, creadorM],
     gifPlayback: true

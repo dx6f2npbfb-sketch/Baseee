@@ -102,7 +102,7 @@ ${taguser} fue sacadx del grupo 🥱
 👉 No juega ni con la comida 😂  
 
 Gracias por participar… loser 🎯` 
-]
+
     await conn.sendLuffy(m.chat, txt1, sunflare3, ban, img, img, ig, estilo)
   }
 

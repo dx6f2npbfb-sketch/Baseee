@@ -20,7 +20,6 @@ export async function before(m, { conn, participants, groupMetadata }) {
   let txt2 = `Se salió ${await conn.getName(who)}\nAhora somos ${groupSize} miembros en el grupo.`
   let sunflare = `Yancito Bot`
   let sunflare2 = `Yancito Bot MD`
-  let sunflare3 = `Yan Bot MD`
 
 if (chat.welcome && m.messageStubType == 27) {
   const groupName = groupMetadata.subject
@@ -103,7 +102,7 @@ ${taguser} fue sacadx del grupo 🥱
 
 Gracias por participar… loser 🎯` 
 ]
-    await conn.sendLuffy(m.chat, txt1, txt2, sunflare3, ban, img, img, ig, estilo)
+    await conn.sendLuffy(m.chat, txt1, txt2, sunflare, ban, img, img, ig, estilo)
   }
 
 if (chat.welcome && m.messageStubType == 32) {

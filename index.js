@@ -22,7 +22,7 @@ say('Jota - MD', {
   align: 'center',
   gradient: ['red', 'magenta']
 });
-say(`Developed By Shadow's Club 🌹\n&&\nDev Criss 🇦🇱`, {
+say(`Bot de WhatsApp ✅\n&&\n${botname}`, {
   font: 'console',
   align: 'center',
   gradient: ['red', 'magenta']

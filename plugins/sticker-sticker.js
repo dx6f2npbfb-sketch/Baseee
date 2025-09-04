@@ -7,7 +7,7 @@ let handler = async (m, { conn, args }) => {
   let stiker = false
   let q = m.quoted || m
   let mime = (q.msg || q).mimetype || q.mediaType || ''
-  const mensajeError = `${emojis} responde a una imagen o video.`
+  const mensajeError = `${emojis} *conversión fallida, responde a una imagen o video para convertir en stiker.*`
 
   try {
     if (mime.startsWith('image/') || mime.startsWith('video/') || mime === 'image/webp') {

@@ -116,16 +116,13 @@ ${taguser} decidió
 ➤ Abandonar el grupo 😒  
 ➤ Mucho nivel pa alguien tan malo. 😌  
 
-🪦 Que le vaya bien, por la sombra...`,`╭───────👾───────╮
+🪦 Que le vaya bien, por la sombra...`,
+`╭───────👾───────╮
      🚪 SE FUE 🚪
      ${taguser}
-╰───────👾───────╯
-
-🛑 No aguantó la presión  
+╰───────👾───────╯\n🛑 No aguantó la presión  
 😂 Otro caído en el intento  
-🔥 El grupo sigue... pero sin ti  
-
-「 Gracias por nada, bebé 🐌 」`
+🔥 El grupo sigue... pero sin ti\n「 Gracias por nada, bebé 🐌 」`
     await conn.sendLuffy(m.chat, txt1, sunflare2, bye, img, img, insta, fkontak)
   }
 }

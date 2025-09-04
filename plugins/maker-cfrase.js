@@ -20,7 +20,7 @@ const handler = async (m, { text, usedPrefix, command, quoted }) => {
     }, { quoted: fkontak });
   } catch (e) {
     console.error(e);
-    m.reply('*✖️ Error en la api.*');
+    m.reply('*✖️ Error en la api, todas iguales*');
   }
 };
 

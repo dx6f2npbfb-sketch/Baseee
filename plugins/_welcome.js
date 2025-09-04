@@ -104,7 +104,7 @@ ${taguser} fue sacadx del grupo 🥱
 
 Gracias por participar… loser 🎯` 
 ]
-    await conn.sendLuffy(m.chat, txt1, txt2, sunflare2, ban, img, img, ig, estilo)
+    await conn.sendLuffy(m.chat, txt1, txt2, sunflare1, ban, img, img, ig, estilo)
   }
 
 if (chat.welcome && m.messageStubType == 32) {
@@ -138,5 +138,5 @@ ${taguser} decidió
         .replace(/@desc/g, groupDesc)
     : msgsBye[Math.floor(Math.random() * msgsBye.length)]
 
-    await conn.sendLuffy(m.chat, txt1, sunflare1, bye, img, img, grupo, estilo)
+    await conn.sendLuffy(m.chat, txt1, sunflare2, bye, img, img, grupo, estilo)
   }}

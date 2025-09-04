@@ -110,7 +110,7 @@ if (chat.welcome && m.messageStubType == 32) {
   const groupName = groupMetadata.subject
   const groupDesc = groupMetadata.desc || 'sin descripción'
 
-  const msgsbye : [ `╭───────👾───────╮
+const msgsbye : [ `╭───────👾───────╮
      🚪 SE FUE ${taguser} 🚪
 ╰───────👾───────╯
 

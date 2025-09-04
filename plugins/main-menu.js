@@ -19,7 +19,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 
     await m.react('🕷️')
 
-    const img = 'https://files.catbox.moe/twwhc9.jpg
+    const img = `https://files.catbox.moe/twwhc9.jpg`
 
 let tags = {};
 let emojis = {
@@ -83,8 +83,7 @@ for (let key in emojis) {
 
     before: `ㅤㅤ   ---------🕷️𝐌𝐄𝐍𝐔 𝐘𝐀𝐍𝐂𝐈𝐓𝐎🕷️ ---------
 • 𝙷𝚘𝚕𝚊 ${taguser} 👋
-• ${saludo}
-${readMore}
+• ${saludo}\n
 ㅤㅤ *✨ 𝗟𝗶𝘀𝘁𝗮 𝗱𝗲 𝗰𝗼𝗺𝗮𝗻𝗱𝗼𝘀 ✨*
 `,
 

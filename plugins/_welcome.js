@@ -81,7 +81,7 @@ if (chat.welcome && m.messageStubType == 28) {
         .replace(/@user/g, taguser)
         .replace(/@group/g, groupName)
         .replace(/@desc/g, groupDesc)
-    : `╔════ 💀 ════╗
+  const msgskick = [ `╔════ 💀 ════╗
    ✂️ ELIMINADX ✂️
 ╚════ 💀 ════╝
 
@@ -101,6 +101,7 @@ ${taguser} fue sacadx del grupo 🥱
 👉 No juega ni con la comida 😂  
 
 Gracias por participar… loser 🎯` 
+]
     await conn.sendLuffy(m.chat, txt1, sunflare1, ban, img, img, ig, estilo)
   }
 

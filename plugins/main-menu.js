@@ -88,9 +88,9 @@ ${readMore}
 ㅤㅤ *✨ 𝗟𝗶𝘀𝘁𝗮 𝗱𝗲 𝗰𝗼𝗺𝗮𝗻𝗱𝗼𝘀 ✨*
 `,
 
-      header: category => `╭──•${category}`,
+      header: category => `╭┈┈ ๑❀๑${category}`,
       body: (cmd, emoji) => `│${emoji} ${cmd}`,
-      footer: '╰──•',
+      footer: '╰──๑❀๑',
       after: `> ${dev}`
   }
 

@@ -13,7 +13,7 @@ let handler = async (m, { conn, args }) => {
   try {
     if (mime.startsWith('image/') || mime.startsWith('video/') || mime === 'image/webp') {
       let media = await q.download?.()
-      if (!media) return conn.reply(m.chat, mensajeError, m)
+      if (!media) return conn.reply(m.chat, mensajeError,m)
 
       try {
         stiker = await sticker(media, false, global.packN, global.authorN)

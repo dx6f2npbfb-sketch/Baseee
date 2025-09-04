@@ -124,8 +124,7 @@ global.fechaHora = `${diaSemana}, ${dia} de ${mes} del ${año} │ Hora: ${hora}
   global.readMore = more.repeat(850)
 
   // Paquete y autor estilizado
-  global.packN = `
-∿ 協会  Sʜʌᴅᴏᴡ′s Cʟᴜʙ  閲覧 ࣪ ˖ \n↳ @shadows.xyz\n\n🐼 𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐁𝐲:\n↳ @${global.usnamebot}\n👤 𝐔𝐬𝐮𝐚𝐫𝐢𝐨:\n↳ @${global.usname}\n\n`
+  global.packN = `🕷️ 𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐁𝐲:\n↳ @${global.usnamebot}\n👤 𝐔𝐬𝐮𝐚𝐫𝐢𝐨:\n↳ @${global.usname}\n\n`
   global.authorN = dev
 
 /*

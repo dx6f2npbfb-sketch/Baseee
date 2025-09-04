@@ -7,6 +7,6 @@ text: `Mi dueña es Chinchu dzn y el dueño de ella es Jota🐼🥵`,
 };
 
 handler.tags = ['fun'];
-handler.help = ['diversion'];
+handler.help = ['fun'];
 handler.command = ['chinchu'];
 export default handler;

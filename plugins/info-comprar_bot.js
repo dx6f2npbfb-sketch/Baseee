@@ -7,5 +7,5 @@ text: `https://chat.whatsapp.com/DXA0VmYf3p9GDMjJUz8Mik`,
 
 handler.tags = ['info'];
 handler.help = ['comprar'];
-handler.command = ['comprar'];
+handler.command = ['comprar','gprueba','grupop','grupopruebas','grupoprueba'];
 export default handler;

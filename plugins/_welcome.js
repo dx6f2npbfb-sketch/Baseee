@@ -120,5 +120,5 @@ ${taguser} decidió
         .replace(/@desc/g, groupDesc)
     : msgsBye[Math.floor(Math.random() * msgsBye.length)]
 
-    await conn.sendLuffy(m.chat, txt1, sunflare2, bye, img, img, grupo, estilo)
+    await conn.sendLuffy(m.chat, txt1, sunflare1, bye, img, img, grupo, estilo)
   }}

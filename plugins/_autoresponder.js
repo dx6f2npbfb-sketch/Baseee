@@ -7,10 +7,10 @@ handler.all = async function (m) {
   if (chat?.isBaneed) return;
 
   if (/^@+5493855789747$/i.test(m.text)) {
-    conn.reply(m.chat, `*✦━━━★━━━✦
-🚫 Prohibido mencionar a mi dueña
-😤 ¡Deja De Joder La Concha De La Lora! 🇦🇷
-✦━━━★━━━✦*`, m);
+    conn.reply(m.chat, `*✦━━━★━━━✦*
+🚫 *Prohibido mencionar a mi dueña*
+😤 *¡Deja De Joder La Concha De La Lora!* 🇦🇷
+*✦━━━★━━━✦*`, m);
     return !0;
   }
 };

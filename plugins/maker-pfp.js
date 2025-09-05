@@ -79,7 +79,7 @@ let handler = async (m, { conn, args }) => {
 
         who = exists.jid;
     } else {
-        return conn.reply(m.chat, `*${emojis} Debes responder a un mensaje, etiquetar a un usuario o ingresar un número válido.*`, m, rcanal);
+        return conn.reply(m.chat, `*${emojis} Debes responder a un mensaje, etiquetar a un usuario o ingresar un número válido.*`, m);
     }
 
     // 🏷️ Obtener nombre del usuario

@@ -5,7 +5,7 @@ let handler = async (m, { conn, command, text }) => {
     let userName = user === m.sender ? `@${m.sender.split('@')[0]}` : `@${user.split('@')[0]}`;
 
     // Mensaje de respuesta
-    const responseMessage = `*QUE CREES PUTITX* 
+    const responseMessage =`*QUE CREES PUTITX* 
 
 *Te descuidaste y te han metido todo el 🍆 dentro ${texto || userName}, mientras gemias cómo puta y pedías que te dieran más y más*
 

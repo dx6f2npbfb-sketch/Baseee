@@ -17,9 +17,11 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
   }
 
   let defaultMenu = {
-    before: `*👋🏻 ¡Hola!* *${usertag}*
-*Bienvenido al Menú Free Fire 🔥*
-
+    before: `╔═══════《🎮》═══════╗
+     〘 Menú-Logos 〙
+╚═══════《👾》═══════╝
+ 「 👋Hola ${usertag}👋 」
+> ${saludo}\n
 > \`\`\`${fechaHora}\`\`\`
 `,
 

@@ -5,14 +5,12 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
 
   let tags = {
     "list": "「 *Listas* 」📑",
-    "reglas": "「 *Reglas* 」📜",
     "select": "「 *Select* 」🎮"
 
   }
 
   let emojis = {
     "list": "📑",
-    "reglas" : "📜",
     "select": "🎮"
   }
 
@@ -27,7 +25,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
 
     header: category => `╭───‧₊˚✧[${category}]✧˚₊‧`,
     body: (cmd, emoji) => `𓉘${emoji} ➺ ${cmd}`,
-    footer: '╰──✧･ﾟ: *✧･ﾟ:* 🎮 *:･ﾟ✧*:･ﾟ✧',
+    footer: '╰──✧',
     after: `> ${dev}`
   }
 

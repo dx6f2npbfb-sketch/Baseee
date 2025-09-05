@@ -6,7 +6,7 @@ var handler = async (m, { conn, args, usedPrefix, command }) => {
     }
 
     try {
-        await m.react('☁️');
+        await m.react('💬');
 
         const tiktokData = await tiktokdl(args[0]);
 

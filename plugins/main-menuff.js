@@ -25,7 +25,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
 > \`\`\`${fechaHora}\`\`\`
 `,
 
-    header: category => `╭──• ${category}`,
+    header: category => `╭───‧₊˚✧[${category}]✧˚₊‧`,
     body: (cmd, emoji) => `│${emoji}° ${cmd}`,
     footer: '╰──•',
     after: `> ${dev}`

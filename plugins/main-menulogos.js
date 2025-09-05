@@ -13,11 +13,11 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
   }
 
   let defaultMenu = {
-    before: `╔═══════《${emoji}》═══════╗
+    before: `╔═══════《🤍》═══════╗
      〘 Menú-Logos 〙
-╚═══════ 《${emoji}》═══════╝
+╚═══════《⚪》═══════╝
  「 👋Hola ${usertag}👋 」
-> ${saludo}`,
+> ${saludo}\n\n`,
 
     header: category => `╭──• ${category}`,
     body: (cmd, emoji) => `│${emoji}° ${cmd}`,

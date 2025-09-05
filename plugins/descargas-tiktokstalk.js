@@ -1,34 +1,59 @@
-import fetch from 'node-fetch';
+import fetch from 'node-fetch'
 
-const handler = async (m, { conn, text }) => {
-  const datas = global
-  const idioma = datas.db.data.users[m.sender].language
-  const _translate = JSON.parse(fs.readFileSync(`./language/${idioma}.json`))
-  const tradutor = _translate.plugins.downloader_tiktokstalk
+var handler = async (m, { conn, args, usedPrefix, command }) => {
+    if (!args[0]) {
+        throw m.reply(`*${xdownload} Por favor, ingresa un link de TikTok.*\n> *\`Ejemplo:\`* ${usedPrefix + command} https://vm.tiktok.com/ZMkcuXwJv/`);
+    }
 
-  if (!text) return conn.reply(m.chat, tradutor.texto1, m);
-  try {
-    const res = await fetch(`https://deliriusapi-official.vercel.app/tools/tiktokstalk?q=${encodeURIComponent(text)}`);
-    const res2 = `https://api.lolhuman.xyz/api/pptiktok/${text}?apikey=${lolkeysapi}`;
-    const json = await res.json();
-    if (res.status !== 200) throw await res.text();
-    if (!json.status) throw json;
-    const thumb = await (await fetch(json.result.user_picture)).buffer();
-    const Mystic = `
-${tradutor.texto2[0]} ${json.result.username}
-${tradutor.texto2[1]}  ${json.result.nickname}
-${tradutor.texto2[2]}  ${json.result.followers}
-${tradutor.texto2[3]}  ${json.result.followings}
-${tradutor.texto2[4]}  ${json.result.likes}
-${tradutor.texto2[5]}  ${json.result.video}
-${tradutor.texto2[6]}  ${json.result.bio}
-`.trim();
-    conn.sendFile(m.chat, res2, 'error.jpg', Mystic, m, false);
-  } catch (e) {
-    throw tradutor.texto3;
-  }
+    try {
+        await m.react('☁️');
+
+        const tiktokData = await tiktokdl(args[0]);
+
+        if (!tiktokData) {
+            throw m.reply("Error api!");
+        }
+
+        const videoURL = tiktokData.data.play;
+        const videoURLWatermark = tiktokData.data.wmplay;
+        const infonya_gan = `*📖 Descrip꯭ción:*
+> ${tiktokData.data.title}
+╭── ︿︿︿︿︿ *⭒   ⭒   ⭒   ⭒   ⭒*
+┊ ✧ *Likes:* ${tiktokData.data.digg_count}
+┊ ✧ *Comentarios:* ${tiktokData.data.comment_count}
+┊ ✧ *Compartidas:* ${tiktokData.data.share_count}
+┊ ✧ *Vistas:* ${tiktokData.data.play_count}
+┊ ✧ *Descargas:* ${tiktokData.data.download_count}
+╰─── ︶︶︶︶ ✰⃕  ⌇ *⭒ ⭒ ⭒*   ˚̩̥̩̥*̩̩͙✩
+*👤 Usu꯭ario:*
+·˚₊· ͟͟͞͞꒰➳ ${tiktokData.data.author.nickname || "No info"}
+(https://www.tiktok.com/@${tiktokData.data.author.unique_id})
+*🎧 Son꯭ido:*
+${tiktokData.data.music}`;
+
+        if (videoURL || videoURLWatermark) {
+            await conn.sendFile(m.chat, videoURL, "tiktok.mp4", "\`\`\`◜TiTokV2 - Download◞\`\`\`" + `\n\n${infonya_gan}`,fkontak, m);
+            setTimeout(async () => {
+                // Aquí se eliminó la línea que enviaba el audio
+                 await conn.sendFile(m.chat, `${tiktokData.data.music}`, "lagutt.mp3", "", m);
+            }, 1500);
+        } else {
+            throw m.reply("*No se pudo descargar.*");
+        }
+    } catch (error1) {
+        conn.reply(m.chat, `Error: ${error1}`, m);
+    }
 };
-handler.help = ['tiktokstalk'].map((v) => v + ' <username>');
-handler.tags = ['stalk'];
-handler.command = /^(tiktokstalk|ttstalk)$/i;
-export default handler;
+
+handler.help = ['tiktok2']
+handler.tags = ['descargas']
+handler.command = /^(tiktok2|tt2|tt2dl)$/i;
+
+export default handler
+
+async function tiktokdl(url) {
+    //let tikwm = `https://www.tikwm.com/api/?url=${url}?hd=1`
+    let tikwm = `https://www.tikwm.com/api/?url=${encodeURIComponent(url)}&hd=1`
+    let response = await (await fetch(tikwm)).json()
+    return response
+}

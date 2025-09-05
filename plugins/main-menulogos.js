@@ -1,7 +1,7 @@
 let handler = async (m, { conn, usedPrefix: _p }) => {
 
   let usertag = '@' + m.sender.split('@')[0]
-  const vid = 'https://files.catbox.moe/g4yv7k.mp4'
+  const vid = 'https://files.catbox.moe/z6s3fx.mp4'
 
   let tags = {
     "logos": "「 *Logos* 」🏝️"

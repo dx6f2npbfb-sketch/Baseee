@@ -9,7 +9,7 @@ const handler = async (m, { conn }) => {
     } else if (m.mentionedJid && m.mentionedJid.length) {
         user = m.mentionedJid[0];
     } else {
-        await conn.reply(m.chat, `*${emojis} Etiqueta o responde al usuario que deseas desbanear.*`, m);
+        await conn.reply(m.chat, `*${emojis} Etiqueta o responde al usuario que deseas desbanear.*`, m, dev);
         return;
     }
 

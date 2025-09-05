@@ -5,12 +5,13 @@ let handler = async (m, { conn, command, text }) => {
     let userName = user === m.sender ? `@${m.sender.split('@')[0]}` : `@${user.split('@')[0]}`;
 
     // Mensaje de respuesta
-    const responseMessage =`*QUE CREES PUTITX* 
+    const responseMessage =`*Le ha metido el pene a ${text || userName}
 
-*Te descuidaste y te han metido todo el 🍆 dentro ${texto || userName}, mientras gemias cómo puta y pedías que te dieran más y más*
+* con todo y condón hasta quedar seco, has dicho "po r favor más duroooooo!, ahhhhhhh, ahhhhhh, hazme un hijo que sea igual de pitudo que tú!" mientras te pe netraba y luego te ha dejado en silla de ruedas!
 
-*${texto || userName}*
-🥵*ya estás clavadx, solo te queda menearte`;
+userName}*
+
+*YA TE HAN PENETRADO!*`;
 
     // Envía la respuesta al chat
     conn.reply(m.chat, responseMessage, null, { mentions: [user] });

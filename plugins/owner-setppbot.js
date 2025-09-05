@@ -8,7 +8,7 @@ let handler = async (m, { conn }) => {
     return await conn.reply(
       m.chat,
       `*${emojis} Envia una imagen más el comando para actualizar la foto de perfil del bot.*`,
-      m, rcanal
+      m
     )
   }
 

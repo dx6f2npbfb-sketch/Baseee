@@ -1,7 +1,7 @@
 import fetch from 'node-fetch'
 
 let handler = async (m, { conn }) => {
-  await m.react(emojis);
+  await m.react('${emojis});
 
   let list = [
     {

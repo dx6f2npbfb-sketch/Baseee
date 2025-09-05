@@ -5,14 +5,7 @@ let handler = async (m, { conn, command, text }) => {
     let userName = user === m.sender ? `@${m.sender.split('@')[0]}` : `@${user.split('@')[0]}`;
 
     // Mensaje de respuesta
-    const responseMessage = `
-*TE HAN LLENADO LA CARA DE SEMEN POR PUTA Y ZORRA!*
-
-*Le ha metido el pene a ${text || userName}* con todo y condón hasta quedar seco, has dicho "por favor más duroooooo!, ahhhhhhh, ahhhhhh, hazme un hijo que sea igual de pitudo que tú!" mientras te penetraba y luego te ha dejado en silla de ruedas!
-
-*${text || userName}* 
-🔥 *YA TE HAN PENETRADO!*`,
-`*QUE CREES PUTITX* 
+    const responseMessage = `*QUE CREES PUTITX* 
 
 *Te descuidaste y te han metido todo el 🍆 dentro ${texto || userName}, mientras gemias cómo puta y pedías que te dieran más y más*
 

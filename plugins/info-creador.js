@@ -1,38 +1,47 @@
-const handler = async (m, {conn, usedPrefix}) => {
-  const datas = global
-  const idioma = datas.db.data.users[m.sender].language
-  const _translate = JSON.parse(fs.readFileSync(`./language/${idioma}.json`))
-  const tradutor = _translate.plugins.info_creador
+import fetch from 'node-fetch';
 
-  const doc = ['pdf', 'zip', 'vnd.openxmlformats-officedocument.presentationml.presentation', 'vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'vnd.openxmlformats-officedocument.wordprocessingml.document'];
-  const document = doc[Math.floor(Math.random() * doc.length)];
-  const text = `${tradutor.texto1[0]}`.trim();
-  const buttonMessage= {
-    'document': {url: `https://www.instagram.com/ineffable.mvrco/`},
-    'mimetype': `application/${document}`,
-    'fileName': `${tradutor.texto2[0]}`,
-    'fileLength': 99999999999999,
-    'pageCount': 200,
-    'contextInfo': {
-      'forwardingScore': 200,
-      'isForwarded': true,
-      'externalAdReply': {
-        'mediaUrl': 'https://www.instagram.com/ineffable.mvrco/',
-        'mediaType': 2,
-        'previewType': 'pdf',
-        'title': tradutor.texto2[1],
-        'body': wm,
-        'thumbnail': imagen1,
-        'sourceUrl': 'https://chat.whatsapp.com/FFB0fgdK3IP4ZEmZ8jF1CC'}},
-    'caption': text,
-    'footer': wm,
-    // 'buttons':[
-    // {buttonId: `${usedPrefix}menu`, buttonText: {displayText: '𝙼𝙴𝙽𝚄'}, type: 1},
-    // {buttonId: `${usedPrefix}donar`, buttonText: {displayText: '𝙳𝙾𝙽𝙰𝚁'}, type: 1}],
-    'headerType': 6};
-  conn.sendMessage(m.chat, buttonMessage, {quoted: m});
+let handler = async (m, { conn, usedPrefix, text, args, command }) => {
+    await m.react('☕');
+
+    let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender;
+    let name = await conn.getName(who);
+    let edtr = `@${m.sender.split`@`[0]}`;
+    let username = conn.getName(m.sender);
+
+    // VCARD
+    let list = [{
+        displayName: "Chinchu Dzn",
+        vcard: `BEGIN:VCARD\nVERSION:3.0\nFN: Chinchu Dzn
+\nitem1.TEL;waid=5493855789747:5493855789747\nitem1.X-ABLabel:Número\nitem2.EMAIL;type=INTERNET: ineffable.mvrco@gmail.com\nitem2.X-ABLabel:Email\nitem3.URL:https://www.instagram.com/ineffable.mvrco\nitem3.X-ABLabel:Internet\nitem4.ADR:;; Argentina 🇦🇷;;;;\nitem4.X-ABLabel:Region\nEND:VCARD`,
+    }];
+
+    await conn.sendMessage(m.chat, {
+        contacts: {
+            displayName: `${list.length} Contacto`,
+            contacts: list
+        },
+        contextInfo: {
+            externalAdReply: {
+                showAdAttribution: true,
+                title: 'Hello, I am the official creator of MvrcoSex.',
+                body: dev,
+                thumbnailUrl: 'https://files.catbox.moe/zxwd04.jpg',
+                sourceUrl: 'https://wa.me/56983073328?text=Hola+quiero+adquirir+bot',
+                mediaType: 1,
+                renderLargerThumbnail: true
+            }
+        }
+    }, {
+        quoted: m
+    });
+
+    let txt = `👋 *Hola \`${username}\` este es*\n*el contacto de mi desarrollador*`;
+
+    await conn.sendMessage(m.chat, { text: txt });
 };
-handler.help = ['owner', 'creator'];
+
+handler.help = ['owner', 'creador'];
 handler.tags = ['info'];
-handler.command = /^(owner|creator|creador|propietario)$/i;
+handler.command = /^(owner|creator|creador|dueño)$/i;
+
 export default handler;

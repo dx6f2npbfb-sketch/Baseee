@@ -14,7 +14,7 @@ foto = `*${emojis} ${usuario} ah cambiado la imagen del grupo.*`
 
 edit = `*${emojis} ${usuario} ah permitido que ${m.messageStubParameters[0] == 'on' ? 'solo admins' : 'todos'} configuren el grupo.*`
 
-newlink = `*${emoji} El enlace del grupo fue restablecido*`
+newlink = `*${emojis} El enlace del grupo fue restablecido*`
 
 status = `${emojis} *ESTE GRUPO HA SIDO ${m.messageStubParameters[0] == 'on' ? '`CERRADO*` 🔒' : '`ABIERTO*` 🔓'}\n*POR* ${usuario}\n\n${m.messageStubParameters[0] == 'on' ? '> Solo admins pueden escribir' : '> Todos pueden escribir'}`
 

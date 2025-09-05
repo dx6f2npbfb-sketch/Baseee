@@ -8,7 +8,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
     "xsearch": "「 *Search* 」🍄",
     "xdl": "「 *Download* 」💥",
     "emox": "「 *Gifs* 」🪼",
-    "nsfw": "「 *Contenido* 」🍒"
+    "nsfw": "「 *Contenido* 」🍑"
 
   }
 
@@ -16,7 +16,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
     "xsearch": "🍄",
     "xdl": "💥",
     "emox": "🪼",
-    "nsfw": "🍒"
+    "nsfw": "🍑"
   }
 
   let defaultMenu = {

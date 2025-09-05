@@ -4,7 +4,7 @@ import axios from 'axios'
 
 let handler = async (m, { conn, usedPrefix, command, text }) => {
   if (!text) {
-    return conn.reply(m.chat, `*${emojis} Ingresa un texto para realizar tu sticker animado de Brat.*\n> *Ejemplo:* ${usedPrefix + command} Hello World`, m, rcanal)
+    return conn.reply(m.chat, `*${emojis} Ingresa un texto para realizar tu sticker animado de Brat.*\n> *Ejemplo:* ${usedPrefix + command} Hello World`, m)
   }
 
   m.react('⏳')

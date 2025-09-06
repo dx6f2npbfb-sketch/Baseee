@@ -17,9 +17,9 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     let rtotalreg = Object.values(global.db.data.users).filter(user => user.registered).length
     const readMore = '\u200b'.repeat(850)
 
-    await m.react('🐼')
+    await m.react('🕷️')
 
-    const vid = 'https://files.catbox.moe/js58k4.mp4'
+    const img = 'https://files.catbox.moe/84curn.jpg'
 
 let tags = {};
 let emojis = {
@@ -121,7 +121,7 @@ for (let key in emojis) {
 
 
    await conn.sendMessage(m.chat, {
-    video: { url: vid },
+    imagen: { url: img },
     caption: menuText,
     mentions: [m.sender, creadorM],
     gifPlayback: true

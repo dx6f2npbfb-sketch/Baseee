@@ -1,29 +1,46 @@
-import fetch from 'node-fetch'
 
-let handler = async (m, { conn }) => {
-  await m.react(emojis);
+import fetch from "node-fetch";
 
-  let list = [
-    {
-      displayName: "Cristian Escobar",
-      vcard: `BEGIN:VCARD\nVERSION:3.0\nFN:Dev Criss 🇦🇱\nitem1.TEL;waid=51927238856:51927238856\nitem1.X-ABLabel:Número\nitem2.EMAIL;type=INTERNET:cristianescobar.vx@gmail.com\nitem2.X-ABLabel:Email\nitem3.URL:https://www.instagram.com/dev.criss_vx\nitem3.X-ABLabel:Instagram\nitem4.ADR:;;Perú 🇵🇪;;;;\nitem4.X-ABLabel:País\nEND:VCARD`
-    },
-    {
-      displayName: "Jota",
-      vcard: `BEGIN:VCARD\nVERSION:3.0\nFN:Jota\nitem1.TEL;waid=573155227977:573155227977\nitem1.X-ABLabel:Número\nitem2.EMAIL;type=INTERNET:team.sunflare@gmail.com\nitem2.X-ABLabel:Email\nitem3.URL:https://www.instagram.com/nee\nitem3.X-ABLabel:Instagram\nitem4.ADR:;;Colombia 🇨🇴;;;;\nitem4.X-ABLabel:País\nEND:VCARD`
+let handler = async (m, { conn, command }) => {
+    
+    if (command === 'Dueño') {
+        let username = await conn.getName(m.sender);
+
+        await conn.sendMessage(m.chat, {
+            text: `👤 *Hola ${username}*\n\nAquí tienes el contacto del dueño para adquirir el bot *${botname}*.\nPuedes escribirle para más detalles.`
+        }, { quoted: m });
+
+        // Enviar contacto
+        let list = [{
+            displayName: "Chinchu",
+            vcard: `BEGIN:VCARD\nVERSION:3.0\nFN: Chinchu\nitem1.TEL;waid=5493855789747:5493855789747\nitem1.X-ABLabel:Número\nitem2.EMAIL;type=INTERNET: novaspark.community@gmail.com\nitem2.X-ABLabel:Email\nitem3.URL:https://www.instagram.com/nohayxd\nitem3.X-ABLabel:Instagram\nitem4.ADR:;; Argentina 🇦🇷;;;;\nitem4.X-ABLabel:Región\nEND:VCARD`,
+        }];
+
+        await conn.sendMessage(m.chat, {
+            contacts: {
+                displayName: `${list.length} Contacto`,
+                contacts: list
+            }
+        }, { quoted: m });
+
+        return;
     }
-  ];
 
-  await conn.sendMessage(m.chat, {
-    contacts: {
-      displayName: `${list.length} Contactos`,
-      contacts: list
-    }
-  }, { quoted: estilo });
+    ];
+
+    await conn.sendMessage(
+        m.chat,
+        {
+            caption: botname,
+            footer: dev,
+            viewOnce: true
+        },
+        { quoted: m }
+    );
 };
 
-handler.help = ['creador', 'dueño'];
-handler.tags = ['info'];
-handler.command = /^(owner|creador|creator|dueño|desarrollador)$/i;
+handler.help = ["precios", "vendedor"];
+handler.tags = ["info"];
+handler.command = /^(precios|vendedor)$/i;
 
 export default handler;

@@ -19,7 +19,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 
     await m.react('🕷️')
 
-    const img = 'https://files.catbox.moe/84curn.jpg'
+    const vid = 'https://files.catbox.moe/l6cz19.mp4'
 
 let tags = {};
 let emojis = {
@@ -122,7 +122,7 @@ ${readMore}
 
 
    await conn.sendMessage(m.chat, {
-    image: { url: img },
+    image: { url: vid },
     caption: menuText,
     mentions: [m.sender, creadorM],
     gifPlayback: true

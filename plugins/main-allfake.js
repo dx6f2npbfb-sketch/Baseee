@@ -61,8 +61,8 @@ global.hotw = '*🔥 Los comandos nsfw están desactivados para este chat.*';
 
 //ENLACES
 var grupo = 'https://chat.whatsapp.com/FCS6htvAmlT7nq006lxU4I'
-var web = 'https://jota-bot.vercel.app/' 
-let instagram = 'https://www.instagram.com/dev.criss_vx'
+var web = 'https://yancito-bot.vercel.app/' 
+let instagram = 'https://www.instagram.com/Jotaa.hrz'
 
 global.redes = [grupo, web, instagram].getRandom()
 

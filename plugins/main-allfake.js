@@ -31,7 +31,7 @@ let pp = ''
 let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
 
 //CREADOR Y OTROS
-global.creadorN = '573155227977';
+global.creadorN = '5493855789747';
 global.creadorM = global.creadorN + '@s.whatsapp.net';
 global.botreal = `${(conn.user.jid == global.conn.user.jid ? 'Oficial' : 'Sub-Bot')}`
 global.ofcbot = `${conn.user.jid.split('@')[0]}`
@@ -125,7 +125,7 @@ global.fechaHora = `${diaSemana}, ${dia} de ${mes} del ${año} │ Hora: ${hora}
 
   // Paquete y autor estilizado
   global.packN = `
-∿ 協会  Sʜʌᴅᴏᴡ′s Cʟᴜʙ  閲覧 ࣪ ˖ \n↳ @shadows.xyz\n\n🐼 𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐁𝐲:\n↳ @${global.usnamebot}\n👤 𝐔𝐬𝐮𝐚𝐫𝐢𝐨:\n↳ @${global.usname}\n\n`
+∿ 協会 Yancito Bot  閲覧 ࣪ ˖ \n↳ @Chinchu_Dzn\n\n🐼 𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐁𝐲:\n↳ @${global.usnamebot}\n👤 𝐔𝐬𝐮𝐚𝐫𝐢𝐨:\n↳ @${global.usname}\n\n`
   global.authorN = dev
 
 /*

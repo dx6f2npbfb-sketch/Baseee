@@ -5,7 +5,7 @@ let handler = async (m, { conn, text }) => {
   }
   let res = await gplay.search({ term: text });
   if (!res.length) {
-    return conn.reply(m.chat, "*⚠️ No se encontraron resultados, intenteb con otra busqueda*", m, rcanal); 
+    return conn.reply(m.chat, "*⚠️ No se encontraron resultados, intenteb con otra busqueda*", m); 
   }
   let opt = {
     contextInfo: {

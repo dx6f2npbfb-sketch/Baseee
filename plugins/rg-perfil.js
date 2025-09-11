@@ -37,7 +37,7 @@ const handler = async (m, { conn, args }) => {
 🆙 *Nivel:* ${level}
 ☁️ *Rango:* ${role}
 
-🪙 *ShadowCoins:* ${coin.toLocaleString()}
+🪙 *${moneda}:* ${coin.toLocaleString()}
 🏦 *Banco:* ${bank.toLocaleString()}
 
 🪪 *Premium:* ${premium}

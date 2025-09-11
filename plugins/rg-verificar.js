@@ -56,7 +56,7 @@ await m.react('💌')
 
 *Recompensas:*
 
-🪙 30 YancitoCoins
+🪙 30 ${moneda}
 💫 245 Exp
 
 > ✎ Usa *.profile* para ver tu perfil.`.trim()

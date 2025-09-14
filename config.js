@@ -21,11 +21,11 @@ global.mods = ['51990841568', '51965911060']
 global.prems = ['51965911060', '51906168999']
 
 
-global.packname = 'Jota Bot MD'
-global.botname = 'Yancito Bot by Jotaa.hrz'
+global.packname = 'Yancito Bot MD'
+global.botname = 'Yancito Bot'
 global.wm = 'Yancito Bot - MD'
 global.author = '𝗬𝗮𝗻𝗰𝗶𝘁𝗼 𝗕𝗼𝘁'
-global.dev = 'Yancito Bot MD'
+global.dev = 'Yancito Bot by Jotaa.hrz'
 global.errorm = 'Error: ${error.message}'
 global.namebot = '𝐘𝐀𝐍𝐂𝐈𝐓𝐎'
 global.nameai = 'Yancito Ai'

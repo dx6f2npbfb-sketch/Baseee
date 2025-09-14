@@ -12,7 +12,7 @@ const oi = `*\`AVISO:\`* ${pesan}`;
   for (const mem of participants) {
     teks += `${emotg} @${mem.id.split('@')[0]}\n`;
   }
-  teks += `> ${dev}`;
+  teks += `> ${botname}`;
   conn.sendMessage(m.chat, {text: teks, mentions: participants.map((a) => a.id)} );
 };
 handler.help = ['todos'];

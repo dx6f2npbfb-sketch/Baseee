@@ -3,7 +3,7 @@
 https://whatsapp.com/channel/0029VauTE8AHltY1muYir31n*/
 
 import db from '../lib/database.js'
-const img = 'https://files.catbox.moe/zggh6y.jpg'
+const img = 'https://files.catbox.moe/58oj8f.jpg'
 
 const fkontak2 = {
   key: {

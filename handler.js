@@ -616,7 +616,8 @@ mods: `*${emoji} Esta función solo puede ser usada los moderadores del bot.*`,
 premium: `*${emoji} Esta función solo es para usuarios Premium.*`, 
 group: `*${emoji} Esta funcion solo puede ser ejecutada en Grupos.*`, 
 private: `*${emoji} Esta función solo puede ser ejecutada en chat privado.*`, 
-admin: `*${emoji} Este comando solo puede ser usado por Admins.*`, 
+admin: `*${emoji}¿Y vos quién sos? ¿El Spider-Man de oferta?* 😂  
+> Este comando solo lo usan los Admins originales, no los del multiverso.`, 
 botAdmin: `*${emoji} Para usar esta función debo ser Admin.*`,
 unreg: `*${emoji} \`${botname}\` te avisa que no te encuentras registrado para usar esta función en el bot.*\n\nPara verificar utiliza .reg nombre.edad
 > Ejemplo: .reg ${namebot}.21`,

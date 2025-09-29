@@ -1,56 +1,13 @@
-/* 𝗣𝗼𝘄𝗲𝗿𝗲𝗱 𝗯𝘆 𝗦𝗵𝗮𝗱𝗼𝘄'𝘀 𝗖𝗹𝘂𝗯 🌺᭄
-𝖢𝗋𝖾𝖺𝖽𝗈 𝗉𝗈𝗋 𝖣𝖾𝗏.𝖢𝗋𝗂𝗌𝗌 🇦🇱
-https://whatsapp.com/channel/0029VauTE8AHltY1muYir31n*/
-
-import axios from 'axios';
-import cheerio from 'cheerio';
-import baileys from '@whiskeysockets/baileys';
-
-async function dl(url) {
-  try {
-    const res = await axios.get(url, { headers: { "User-Agent": "Mozilla/5.0" } });
-    const $ = cheerio.load(res.data);
-    const tag = $('script[data-test-id="video-snippet"]');
-    if (tag.length) {
-      const result = JSON.parse(tag.text());
-      return {
-        title: result.name,
-        download: result.contentUrl
-      };
-    } else {
-      const json = JSON.parse($("script[data-relay-response='true']").eq(0).text());
-      const result = json.response.data["v3GetPinQuery"].data;
-      return {
-        title: result.title,
-        download: result.imageLargeUrl
-      };
-    }
-  } catch {
-    return { msg: "*❌ Error, inténtalo de nuevo más tarde*" };
-  }
-}
-
-let handler = async (m, { conn, text }) => {
-  if (!text || !text.includes('https://')) {
-    return await conn.reply(m.chat, `*${emojis} Ingresa un enlace válido de Pinterest.*`, m);
-  }
-
-  try {
-    await m.react('⌛');
-    const result = await dl(text);
-    if (!result || !result.download) return m.reply('*✖️ No se pudo obtener el contenido del enlace.*');
-    const isVideo = result.download.endsWith('.mp4');
-    await conn.sendMessage(m.chat, { [isVideo ? 'video' : 'image']: { url: result.download }, caption: `*Download - Pinterest*\n\n*✒️ Title:* ${result.title || 'Sin Título'}\n\n> ${dev}`
-}, { quoted: m });
-    await m.react('✅');
-  } catch (error) {
-    console.error(error);
-    conn.reply(m.chat, '*✖️ Error al procesar el enlace de Pinterest.*', m);
-  }
+import {pinterest} from '@bochilteam/scraper';
+const handler = async (m, {conn, text, usedPrefix, command}) => {
+  if (!text) throw `*[❗𝐈𝐍𝐅𝐎❗] 𝙴𝙹𝙴𝙼𝙿𝙻𝙾 𝙳𝙴 𝚄𝚂𝙾 𝙳𝙴𝙻 𝙲𝙾𝙼𝙰𝙽𝙳𝙾 ${usedPrefix + command} Minecraft*`;
+  const json = await pinterest(text);
+  conn.sendFile(m.chat, json.getRandom(), 'error.jpg', `
+*𝚁𝙴𝚂𝚄𝙻𝚃𝙰𝙳𝙾𝚂 𝙳𝙴 𝙻𝙰 𝙱𝚄𝚂𝚀𝚄𝙴𝙳𝙰*
+${text}
+`.trim(), m);
 };
-
-handler.help = ['pindl'];
-handler.command = ['pinterestdl', 'pindl'];
-handler.tags = ['dl'];
-
+handler.help = ['pinterest <keyword>'];
+handler.tags = ['internet'];
+handler.command = /^(pinterest)$/i;
 export default handler;

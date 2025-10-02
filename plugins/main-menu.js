@@ -81,19 +81,27 @@ for (let key in emojis) {
     let defaultMenu = {
 
 
-    before: `---------🕷️𝐌𝐄𝐍𝐔 ${namebot}🕷️ ---------
-• 𝙷𝚘𝚕𝚊 ${taguser}👋
-• ${saludo}
+    before: `┏━━━━━━━━━ 🕷️ ━━━━━━━━━┓  
+✧･ﾟ: *✿ Menu Yancito ✿* :･ﾟ✧  
+┗━━━━━━━━━ 🖤 ━━━━━━━━━┛  
+⊹︵︵︵ ⊹  ୨୧  ⊹ ︵︵︵ ⊹
+ ꒰  ${taguser} 🌸!! ꒱   
+⊹ ︶︶︶ ⊹ 🥰 ⊹ ︶︶︶ ⊹
+｡･:*˚:✧｡ ｡･:*˚:✧｡
+ ${saludo}✨
+-ˋˏ ༻❁༺ ˎˊ-
 
-> \`\`\`${fechaHora}\`\`\`
+⌬⌬⌬⌬⌬⌬⌬⌬⌬⌬⌬⌬⌬⌬⌬  
 ${readMore}
-ㅤㅤ *✨ 𝗟𝗶𝘀𝘁𝗮 𝗱𝗲 𝗰𝗼𝗺𝗮𝗻𝗱𝗼𝘀 ✨*
+ㅤㅤ ╔══════ஓ๑♡๑ஓ══════╗  
+     ✨ 𝗟𝗶𝘀𝘁𝗮 𝗱𝗲 𝗰𝗼𝗺𝗮𝗻𝗱𝗼𝘀 ✨  
+    ╚══════ஓ๑♡๑ஓ══════╝  
 `,
 
-      header: category => `╭┈┈ ๑❀๑${category}`,
-      body: (cmd, emoji) => `│${emoji} ${cmd}`,
-      footer: '╰──๑❀๑',
-      after: `> ${dev}`
+      header: category => `╭┈┈ ๑❀๑${category} ┈┈♡ `,
+      body: (cmd, emoji) => `│✧↬${emoji} ${cmd}`,
+      footer: '╰───♡─────────────♡',
+      after: `\n> ${dev}`
   }
 
     let help = Object.values(global.plugins)

@@ -8,7 +8,7 @@ let handler = async (m, { conn, text, isROwner, isOwner }) => {
 
 handler.command = ['setpago']
 handler.help = ['setpago']
-handler.tags = ['vt']
+handler.tags = ['ventas']
 handler.admin = true
 handler.group = true
 export default handler

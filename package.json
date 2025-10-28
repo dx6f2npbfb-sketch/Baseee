@@ -1,5 +1,5 @@
 {
-"name": "Yancito Bot",
+"name": "Jotita Bot",
 "version": "2.1.0",
 "description": "WhatsApp Bot Multi Device",
 "main": "main.js",
@@ -18,21 +18,21 @@
 "eslint": "eslint .",
 "eslintfix": "eslint --fix ."
 },
-"homepage": "https://github.com/Shadows-Club/JotaBot",
+"homepage": "https://github.com/Jotaahrz/NikitaBot-MD",
 "author": {
 "name": "Criss Escobar"
 },
 "repository": {
 "type": "git",
-"url": "git+https://github.com/Shadows-Club/JotaBot.git"
+"url": "git+https://github.com/Jotaahrz/NikitaBot-MD.git"
 },
 "bugs": {
-"url": "https://github.com/Shadows-Club/JotaBot/issues"
+"url": "https://github.com/Jotaahrz/NikitaBot-MD/issues"
 },
 "license": "GPL-3.0-or-later",
 "dependencies": {
 "@vitalets/google-translate-api": "^8.0.0",
-"@whiskeysockets/baileys": "github:nstar-y/bail",
+"@whiskeysockets/baileys": "github:gatanina-li/baileys",
 "google-libphonenumber": "latest",
 "@adiwajshing/keyed-db": "^0.2.4",
 "@bochilteam/scraper": "^4.2.4",

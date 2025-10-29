@@ -1,7 +1,7 @@
 let handler = async (m, { conn, usedPrefix: _p }) => {
 
   let usertag = '@' + m.sender.split('@')[0]
-  const vid = 'https://files.catbox.moe/wg4skm.mp4'
+  const img = 'https://files.catbox.moe/cozwr3.jpg'
 
   let tags = {
     "list": "「 *Listas* 」📑",
@@ -57,7 +57,7 @@ let handler = async (m, { conn, usedPrefix: _p }) => {
 
   await m.react('🎮')
   await conn.sendMessage(m.chat, {
-    video: { url: vid },
+    image: { url: img },
     caption: text,
     mentions: [m.sender],
     gifPlayback: true

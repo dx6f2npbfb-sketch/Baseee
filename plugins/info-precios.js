@@ -10,13 +10,13 @@ let handler = async (m, { conn, command }) => {
         let username = await conn.getName(m.sender);
 
         await conn.sendMessage(m.chat, {
-            text: `👤 *Hola ${username}*\n\nAquí tienes el contacto del dueño para adquirir el bot *${botname}*.\nPuedes escribirle para más detalles.`
+            text: `👤 *Hola ${username}*\n\nAquí tienes el contacto de mi dueña para adquirir el bot *${botname}*.\nPuedes escribirle para más detalles.`
         }, { quoted: m });
 
         // Enviar contacto
         let list = [{
             displayName: "Alee🎭",
-            vcard: `BEGIN:VCARD\nVERSION:3.0\nFN: Alee🎭\nitem1.TEL;waid=56922113858:56922113858\nitem1.X-ABLabel:Número\nitem2.EMAIL;type=INTERNET: novaspark.community@gmail.com\nitem2.X-ABLabel:Email\nitem3.URL:https://www.instagram.com/nohayxd\nitem3.X-ABLabel:Instagram\nitem4.ADR:;; Argentina 🇦🇷;;;;\nitem4.X-ABLabel:Región\nEND:VCARD`,
+            vcard: `BEGIN:VCARD\nVERSION:3.0\nFN: Alee🎭\nitem1.TEL;waid=66954804637:66954804637\nitem1.X-ABLabel:Número\nitem2.EMAIL;type=INTERNET: novaspark.community@gmail.com\nitem2.X-ABLabel:Email\nitem3.URL:https://www.instagram.com/nohayxd\nitem3.X-ABLabel:Instagram\nitem4.ADR:;; Argentina 🇦🇷;;;;\nitem4.X-ABLabel:Región\nEND:VCARD`,
         }];
 
         await conn.sendMessage(m.chat, {

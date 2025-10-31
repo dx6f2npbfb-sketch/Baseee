@@ -11,7 +11,7 @@ global.owner = [
    ['573155227977', 'Jota 🐼', true],
    ['56922113858', 'Alee🎭', true],
    ['229356135813175', '@Jxta', true],
-   ['92497120333890', '@Alee', true],
+   ['66954804637', '@Alee', true],
 ]
 
 global.creator = [

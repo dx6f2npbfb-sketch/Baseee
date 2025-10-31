@@ -185,35 +185,27 @@ break
        break
     default:
       if (!/[01]/.test(command)) return m.reply(`
-*• Ingresa una opción para habilitar o deshabilitar*
+🌱 *Debes especificar la función a encender/apagar*
 
-*≡ Lista de opciones*
-*Tipo :* welcome
-*Descripción :* Des/Activa la *Bienvenida* y *Despedida* para Grupos.
+> Usa .on / .off
 
-*Tipo :* nsfw 
-*Descripción :* Des/Activa los comandos *+18* para Grupos.
+> Ejemplo; .on welcome 
 
-*Tipo :* antiarabes 
-*Descripción :* Des/Activa el *AntiArabes* para eliminar números fake en el grupo.
+\`Funciones\`:
+- Welcome
+> Bienvenidas/despedidas 
+- Nsfw 
+> funciones+18
+- Antiarabes 
+> Elimina +252 cuando mandan msj en los grupos 
+- Antilink 
+> Elimina usuarios que mandan link de WhatsApp 
+- Modoadmin
+> Bot solo funciona con admins
+- Detect 
+> Avisos de cambios en el grupo 
 
-*Tipo :* antilink 
-*Descripción :* Des/Activa el *AntiLink* para eliminar a la persona que manda un link de WhatsApp.
-
-*Tipo :* autoread 
-*Descripción :* Des/Activa el *AutoRead* para que el bot lea los mensajes.
-
-*Tipo :* modoadmin
-*Descripción :* Des/Activa el *Modoadmin* para el que el bot solo sea usado por los admins.
-
-*Tipo :* detect
-*Descripción :* Des/Activa el *detect* para el que el bot de avisos sobre actualizaciones de grupos.
-
-*Tipo :* document 
-*Descripción :* Des/Activa la *Descarga En Documentos* para el Usuario
-
-*💫 Ejemplo:*
-*${usedPrefix + command}* detect
+> ${botname}
 `.trim())
       throw false
   }

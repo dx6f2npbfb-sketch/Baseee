@@ -209,7 +209,13 @@ break
 `.trim())
       throw false
   }
-   m.reply(`*🫧 La opción* \`\`\`${type}\`\`\` *fue* \`\`\`${isEnable ? 'activada' : 'desactivada'}\`\`\` *exitosamente para* ${isAll ? '*este* \`\`\`Bot\`\`\`' : isUser ? '' : '*este* \`\`\`chat\`\`\`'}`)
+      m.reply(`╞═══𝗔𝗰𝘁𝘂𝗮𝗹𝗶𝘇𝗮𝗰𝗶ó𝗻═══╡
+
+🇦🇱ᴏᴘᴄɪᴏɴ: *${type}*
+🔄ʜᴀ sɪᴅᴏ: ${isEnable ? '𝗮𝗰𝘁𝗶𝘃𝗮𝗱𝗮' : '𝗱𝗲𝘀𝗮𝗰𝘁𝗶𝘃𝗮𝗱𝗮'}
+🎭ᴇɴ ᴇsᴛᴇ: ${isAll ? '\`\`\`𝗯𝗼𝘁\`\`\`' : isUser ? '' : '\`\`\`𝗴𝗿𝘂𝗽𝗼\`\`\`'}
+
+╞═══ 𝗟𝗼𝗸𝘄𝗲𝗲𝗱𝗕𝗼𝘁 𝗠𝗗 ═══╡`)
 }
 
 handler.help = ['enable', 'disable', 'on', 'off']

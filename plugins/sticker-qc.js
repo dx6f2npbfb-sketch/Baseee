@@ -7,8 +7,8 @@ const handler = async (m, { conn, args }) => {
         text = args.slice(0).join(" ");
     } else if (m.quoted && m.quoted.text) {
         text = m.quoted.text;
-    } else throw "🎀 *Ingrese un texto para realizar su stiker quotly.*\n\n> Ejemplo: .qc Hello world.";
-   if (!text) return conn.reply(m.chat, '🎀 *Ingrese un texto para realizar su stiker quotly.*\n\n> Ejemplo: .qc Hello world.', m)
+    } else throw "🎭 *Ingrese un texto para realizar su stiker quotly.*\n\n> Ejemplo: .qc Hello world.";
+   if (!text) return conn.reply(m.chat, '🎭 *Ingrese un texto para realizar su stiker quotly.*\n\n> Ejemplo: .qc Hello world.', m)
    if (text.length > 30) return conn.reply(m.chat, '> Máximo 3 carácteres, no es una biblia hijo.', m)
 
     const randomColor = ['#000000'];

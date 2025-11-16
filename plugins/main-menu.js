@@ -94,7 +94,7 @@ for (let key in emojis) {
 ${readMore}\n
 `,
 
-      header: category => `╭┈ࠢ͜─ׄ֟፝͜─ׄ͜─ׄ͜╴𐔌 ${category} 𐦯╶͜─ׄ͜─ׄ֟፝͜─ׄ͜─ׄ͜`,
+      header: category => `╭┈ࠢ͜─ׄ֟፝͜─ׄ͜─ׄ͜╴𐔌 ${category}  𐦯╶͜─ׄ͜─ׄ֟፝͜─ׄ͜─ׄ͜`,
       body: (cmd, emoji) => `|${emoji} ${cmd}`,
       footer: '╰ׅ͜─֟͜─͜─ٞ͜─͜─๊͜─͜─๋͜─⃔═̶፝֟͜═̶⃔─๋͜─͜─͜─๊͜─ٞ͜─͜─֟͜┈ࠢ͜╯ׅ\n',
       after: `> ${dev}`

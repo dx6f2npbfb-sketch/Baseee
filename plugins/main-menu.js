@@ -49,30 +49,30 @@ owner: "💐"
 };
 
 const tagTitles = {
-  main: "Menus",
-  info: "Info",
-  config: "Ajustes",
+  main: "MENUS",
+  info: "INFO",
+  config: "AJUSTES",
   ventas: "ventas",
-  dl: "Download",
-  search: "Search",
-  ia: "Inteligencias",
-  ff: "Free Fire",
-  frases: "Frases",
-  converter: "Converters",
-  tools: "Herramientas",
-  gc: "Grupos",
-  efectos: "Efectos",
-  fun: "Diversión",
-  game: "Juegos",
-  anime: "Random",
-  maker: "Maker",
-  logos: "Logos",
-  emox: "Gifs-Nsfw",
-  nsfw: "Nsfw",
-  sticker: "Sticker",
-  rpg: "Rpg",
-  rg: "Registro",
-  owner: "Owner"
+  dl: "DESCARGAS",
+  search: "SEARCH",
+  ia: "INTELIGENCIAS",
+  ff: "FREE FIRE",
+  frases: "FRASES",
+  converter: "CONVERTES",
+  tools: "HERRAMIENTAS",
+  gc: "GRUPOS",
+  efectos: "EFECTOS",
+  fun: "DIVERSIÓN",
+  game: "JUEGOS",
+  anime: "RANDOM",
+  maker: "MAKER",
+  logos: "LOGOS",
+  emox: "GIFS-NSFW",
+  nsfw: "NSFW",
+  sticker: "STICKER",
+  rpg: "RPG",
+  rg: "REGISTRO",
+  owner: "OWNER"
 };
 
 for (let key in emojis) {
@@ -91,7 +91,7 @@ for (let key in emojis) {
 ${readMore}
 `,
 
-      header: category => `    𓂃ෆ˚────୨ৎ────𐚁๋࣭⭑ֶָ֢\n            ${category}\n`,
+      header: category => `    𓂃ෆ˚────୨ৎ────𐚁๋࣭⭑ֶָ֢\n                ${category}\n`,
       body: (cmd, emoji) => `𖦹°‧★${emoji} ${cmd}`,
       footer: '˚₊‧✩ ˚₊‧꒰ა ʚིᵋº̣̥͙̣̥͙ᵌɞྀ ໒꒱ ‧₊˚ ✩‧₊˚\n',
       after: `> ${dev}`

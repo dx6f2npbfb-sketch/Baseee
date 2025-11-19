@@ -31,11 +31,11 @@ let pp = ''
 let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
 
 //CREADOR Y OTROS
-global.creadorN = '5493855789747';
+global.creadorN = '543884642194';
 global.creadorM = global.creadorN + '@s.whatsapp.net';
 global.botreal = `${(conn.user.jid == global.conn.user.jid ? 'Oficial' : 'Sub-Bot')}`
 global.ofcbot = `${conn.user.jid.split('@')[0]}`
-global.asistencia = 'Wa.me/5493855789747'
+global.asistencia = 'Wa.me/543884642194'
 
 //REACCIONES 
 global.rwait = '🕒'
@@ -43,11 +43,11 @@ global.done = '✅'
 global.error = '✖️'
 
 //EMOJIS PREDETERMINADOS
-global.emoji = '🎭'
-global.emoji2 = '🫟'
-global.emoji3 = '🩸'
-global.emoji4 = '🇦🇱'
-global.emoji5 = '🔥'
+global.emoji = '💜'
+global.emoji2 = '🐣'
+global.emoji3 = '🦋'
+global.emoji4 = '🐳'
+global.emoji5 = '🦦'
 global.emojis = [emoji, emoji2, emoji3, emoji4, emoji5].getRandom()
 
 //EMOJIS INFORMATIVOS
@@ -124,7 +124,7 @@ global.fechaHora = `${diaSemana}, ${dia} de ${mes} del ${año} │ Hora: ${hora}
   global.readMore = more.repeat(850)
 
   // Paquete y autor estilizado
-  global.packN = `⋆⁺₊⋆ ☾⋆⁺₊⋆\n⟆ ${global.botname} ⟅\n⋄ @${global.usname} ⋄\n⋆⁺₊⋆ ☽⋆⁺₊⋆`
+  global.packN = `𐚁๋࣭⭑ֶָ֢ ${global.botname} 𐚁๋࣭⭑ֶָ֢\n\n⋄ @${global.usname} ⋄\n𓂃𓂂𖡼.𖤣𖥧𓈒◌܀𖥧𖧧 ˒˒.·˚ ₊˚ˑ𓆸`
   global.authorN = dev
 
 /*

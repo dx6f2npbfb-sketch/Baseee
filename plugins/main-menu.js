@@ -91,7 +91,7 @@ for (let key in emojis) {
 ${readMore}
 `,
 
-      header: category => `    𓂃ෆ˚────୨ৎ────𐚁๋࣭⭑ֶָ֢\n    ${category}\n`,
+      header: category => `    𓂃ෆ˚────୨ৎ────𐚁๋࣭⭑ֶָ֢\n         ${category}\n`,
       body: (cmd, emoji) => `𖦹°‧★${emoji} ${cmd}`,
       footer: '˚₊‧✩ ˚₊‧꒰ა ʚིᵋº̣̥͙̣̥͙ᵌɞྀ ໒꒱ ‧₊˚ ✩‧₊˚\n',
       after: `> ${dev}`

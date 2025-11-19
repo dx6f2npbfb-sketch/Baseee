@@ -24,7 +24,7 @@ let handler = async (m, { conn, text }) => {
     if (!text) {
         await m.react('⌛')
         return conn.sendMessage(m.chat, {
-            text: `😒 *¿Y el texto, genio? No puedo hacer magia sin palabras.*\n\n> ✨ *ejemplo:* .brat Lokweed Bot es el mejor`,
+            text: `😒 *¿Y el texto, genio? No puedo hacer magia sin palabras.*\n\n> ✨ *ejemplo:* .brat Adhara Bot es el mejor`,
         }, { quoted: m });
     }
 
@@ -34,7 +34,7 @@ let handler = async (m, { conn, text }) => {
     try {
         const buffer = await fetchSticker(text);
         const stiker = await sticker(buffer, false,
-'propietario del bot:\nIG:Chinchu_Dzn\n\n', global.botname, '\n\n', global.authN);
+'.', global.botname, '\n\n', global.authN);
 
         if (stiker) {
             // Reacciona con ✅ al enviar el sticker exitosamente

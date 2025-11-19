@@ -2,7 +2,7 @@
 import axios from "axios";
 
 let handler = async (m, { conn, command }) => {
-    const comprar = 'https://files.catbox.moe/0sufss.jpg';
+    const comprar = 'https://files.catbox.moe/x8x160.jpg';
 
     await m.react(command === 'vendedor' ? '📞' : '🛒');
 
@@ -15,8 +15,8 @@ let handler = async (m, { conn, command }) => {
 
         // Enviar contacto
         let list = [{
-            displayName: "Alee🎭",
-            vcard: `BEGIN:VCARD\nVERSION:3.0\nFN: Alee🎭\nitem1.TEL;waid=66954804637:66954804637\nitem1.X-ABLabel:Número\nitem2.EMAIL;type=INTERNET: novaspark.community@gmail.com\nitem2.X-ABLabel:Email\nitem3.URL:https://www.instagram.com/nohayxd\nitem3.X-ABLabel:Instagram\nitem4.ADR:;; Argentina 🇦🇷;;;;\nitem4.X-ABLabel:Región\nEND:VCARD`,
+            displayName: "antvniaaax7💜",
+            vcard: `BEGIN:VCARD\nVERSION:3.0\nFN:antvniaaax7💜\nitem1.TEL;waid=543884642194:543884642194\nitem1.X-ABLabel:Número\nitem2.EMAIL;type=INTERNET:abuelitas yasociadas@gmail.com\nitem2.X-ABLabel:Email\nitem3.URL:https://www.instagram.com/antvniaaax7\nitem3.X-ABLabel:Instagram\nitem4.ADR:;; Argentina 🇦🇷;;;;\nitem4.X-ABLabel:Región\nEND:VCARD`,
         }];
 
         await conn.sendMessage(m.chat, {
@@ -33,7 +33,7 @@ let handler = async (m, { conn, command }) => {
     const buttons = [
         {
             buttonId: `.vendedor`,
-            buttonText: { displayText: "Comprar 🛍️" },
+            buttonText: { displayText: "Comprar 💜" },
             type: 1
         }
     ];

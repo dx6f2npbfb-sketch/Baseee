@@ -23,7 +23,7 @@ export async function before(m, { conn, participants, groupMetadata }) {
   let who = m.messageStubParameters[0]
   let taguser = `@${who.split('@')[0]}`
   let chat = global.db.data.chats[m.chat]
-  let defaultImage = 'https://cdn.russellxz.click/5d5384cd.jpeg'
+  let defaultImage = 'https://files.catbox.moe/x8x160.jpg'
   let dev = 'Adhara Bot by Jotaa.hrz'
 
   if (!chat.customWelcome) chat.customWelcome = null

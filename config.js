@@ -9,9 +9,8 @@ import moment from 'moment-timezone'
 
 global.owner = [
    ['573155227977', 'Jota 🐼', true],
-   ['56922113858', 'Alee🎭', true],
+   ['543884642194', 'Antoo', true],
    ['229356135813175', '@Jxta', true],
-   ['66954804637', '@Alee', true],
 ]
 
 global.creator = [
@@ -22,25 +21,27 @@ global.mods =
 global.prems = 
 
 
-global.packname = 'Lokweed Bot MD'
-global.botname = 'Lokweed Bot'
-global.wm = 'Lokweed Bot - MD'
-global.author = 'Lokweed MD'
-global.dev = 'Lokweed Bot by Jotaa.hrz'
+global.packname = 'Adhara Bot MD'
+global.botname = 'Adhara Bot'
+global.wm = 'Adhara Bot - MD'
+global.author = 'Adhara MD'
+global.dev = 'Adhara Bot by Jotaa.hrz'
 global.errorm = 'Error: ${error.message}'
-global.namebot = 'Lokweed'
-global.nameai = 'Lokweed Ai'
-global.textbot = 'LOKWEED BOT MD'
-global.textmain = 'LOKWEEDBOT'
-global.textmain2 = 'Lokweed Bot MD'
+global.namebot = 'Adhara'
+global.nameai = 'Adhara Ai'
+global.textbot = 'ADHARA BOT MD'
+global.textmain = 'ADHARABOT'
+global.textmain2 = 'Adhara Bot MD'
 global.vs = '2.1.0'
-global.emotg = '🎭'
-global.msgtagall = '𝗠𝗘𝗡𝗖𝗜𝗢𝗡 𝗚𝗘𝗡𝗘𝗥𝗔𝗟 𝗟𝗢𝗞𝗪𝗘𝗘𝗗 𝗕𝗢𝗧'
-global.moneda = 'LokweedCoins'
+global.emotg = '💜'
+global.msgtagall = '💜⋆ 𝗘𝗧𝗜𝗤𝗨𝗘𝗧𝗔 𝗚𝗘𝗡𝗘𝗥𝗔𝗟 ⋆💜
+🛍️ 𝗔𝗱𝗾𝘂𝗶𝗲𝗿𝗲 𝗲𝗹 𝗯𝗼𝘁 𝗰𝗼𝗻 ⨾
+ ↳ wa.me/543884642194‬'
+global.moneda = 'AdharaCoins'
 
-global.sessions = 'LokweedSession'
+global.sessions = 'AdharaSession'
 global.jadi = 'JadiBots'
-global.nameqr = 'Lokweed'
+global.nameqr = 'Adhara'
 
 
 global.catalogo = fs.readFileSync('./media/catalogo.jpg')

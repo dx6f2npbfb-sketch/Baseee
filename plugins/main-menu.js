@@ -82,16 +82,7 @@ for (let key in emojis) {
     let defaultMenu = {
 
 
-    before: `̮   ̮   ̮   ̮   ̮   ̮   ̮   ̮   ̮   ̮   ̮   ̮   ̮   ̮   ̮   ̮   ̮   ̮   ̮   ̮
-︶•︶°︶•︶°︶•︶°︶•︶°︶•︶°︶
-> ✨ Hola Soy *𝙇𝙤𝙠𝙬𝙚𝙚𝙙 𝘽𝙤𝙩*, Aquí tienes la lista de comandos.✨
-
-╭┈ࠢ͜┅ࠦ͜͜╾݊͜─ؕ͜─ׄ͜─֬͜─֟͜─֫͜─ׄ͜─ؕ͜─݊͜┈ࠦ͜┅ࠡ͜͜┈࠭͜͜۰۰͜۰
-│👤 *usuario* » ${taguser}
-│🔄 *Versión* » ${vs}
-│✨ *Plugins* » 339
-╰ׅ┈ࠢ͜─ׄ͜─ׄ֟፝͜─ׄ͜─ׄ͜╴ ⋱࣭ ᩴ  ⋮֔   ᩴ ⋰╶͜─ׄ͜─ׄ֟፝͜─ׄ͜─ׄ͜┈ࠢ͜╯ׅ
-${readMore}\n
+    before: `̮
 `,
 
       header: category => `╭┈ࠢ͜─ׄ֟፝͜─ׄ͜─ׄ͜╴𐔌 ${category}  𐦯╶͜─ׄ͜─ׄ֟፝͜─ׄ͜─ׄ͜`,

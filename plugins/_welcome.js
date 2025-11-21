@@ -44,7 +44,7 @@ export async function before(m, { conn, participants, groupMetadata }) {
   if (m.messageStubType === WAMessageStubType.GROUP_PARTICIPANT_ADD) {
     let bienvenida = chat.customWelcome
       ? chat.customWelcome.replace(/@user/g, taguser).replace(/@group/g, groupMetadata.subject)
-      : `૮₍⸝⸝> ̫ <⸝⸝₎ა ♡ ¡Holaaa @${taguser} !
+      : `૮₍⸝⸝> ̫ <⸝⸝₎ა ♡ ¡Holaaa ${taguser} !
 Bienvenid@ a *${groupMetadata.subject}* 🌸
 
 🌷✨ Qué ternura tenerte por aquí.

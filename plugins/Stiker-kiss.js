@@ -1,43 +1,32 @@
-import fs from 'fs';
-
-const filePath = './personalize.json';
-
 let handler = async (m, { conn, text }) => {
-  await conn.sendMessage(m.chat, { react: { text: '💫', key: m.key } });
-
   if (!text) {
-    await conn.sendMessage(m.chat, { react: { text: '❌', key: m.key } });
-    return m.reply('✨ Onii-chan, porfa dime qué nombre quieres para mí~ 💖');
+    return await conn.reply(
+      m.chat,
+      '⚠️ Debes escribir el nuevo nombre que quieres asignar al bot.\n\nEjemplo: *.setnamebot MiBotCaribe*',
+      m
+    )
   }
 
-  let data;
   try {
-    data = JSON.parse(fs.readFileSync(filePath));
-  } catch {
-    data = {};
+    await conn.updateProfileName(text)
+    await conn.sendMessage(
+      m.chat,
+      { text: `✅ Nombre del bot actualizado correctamente a: *${text}*` },
+      { quoted: m }
+    )
+  } catch (e) {
+    await conn.reply(
+      m.chat,
+      '❌ Ocurrió un error al intentar actualizar el nombre del bot.',
+      m
+    )
+    console.error(e)
   }
+}
 
-  // Usa el ID del dueño como clave
-  const ownerID = m.sender;
-  if (!data[ownerID]) {
-    data[ownerID] = {
-      botName: null,
-      currency: null,
-      videos: []
-    };
-  }
+handler.tags = ['owner']
+handler.help = ['setnamebot <nuevo nombre>']
+handler.command = ['setnamebot', 'cambiarnombrebot']
+handler.owner = true
 
-  data[ownerID].botName = text.trim();
-
-  fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
-
-  await conn.sendMessage(m.chat, { react: { text: '🌸', key: m.key } });
-  m.reply(`🌟 ¡Listo, mi querido amo! Ahora me llamaré *${text.trim()}* solo para ti 💕`);
-};
-
-handler.help = ['cambiarnombreBot <nuevo nombre>', 'nombrebot <nuevo nombre>'];
-handler.tags = ['config'];
-handler.command = /^(cambiarnombreBot|nombrebot)$/i;
-handler.owner = true;
-
-export default handler;
+export default handler

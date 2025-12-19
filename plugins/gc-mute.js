@@ -3,7 +3,8 @@ let mutedUsers = new Set();
 // Lista de owners y número del bot
 const ownerNumbersRaw = [
     "5493884642194",
-    "573155227977"
+    "573155227977",
+    "56926927454"
 ];
 const botNumberRaw = "5493885926112";
 
